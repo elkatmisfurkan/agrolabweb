@@ -31,7 +31,7 @@ Ziraat fakültesi öğrencileri, yazılım geliştiriciler ve kırsal bölgedeki
 
 - 💬 **WhatsApp Topluluğumuz:** [Katılmak İçin Tıklayın](https://chat.whatsapp.com/FNp2P9adUKmAnnVAPS4oRh?s=cl&p=a&mlu=4&ilr=4)
 - 📸 **Instagram:** [@agro_labgenclik](https://www.instagram.com/agro_labgenclik?exln=eWE2aGQxY2N3aWpu)
-- ✉️ **Kurumsal E-Posta:** [info@agrolab.org](mailto:info@agrolab.org)
+- ✉️ **Kurumsal E-Posta:** [elkatmisfurkan65@gmail.com](mailto:elkatmisfurkan65@gmail.com)
 - 🌐 **Web Sitesi:** [agrolab.org.tr](https://www.agrolab.org.tr)
 
 ---

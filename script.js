@@ -460,7 +460,7 @@ function initCopyAndShare() {
   const copyEmailBtn = document.getElementById('copy-email-btn');
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
-      const email = copyEmailBtn.getAttribute('data-email') || 'info@agrolab.org';
+      const email = copyEmailBtn.getAttribute('data-email') || 'elkatmisfurkan65@gmail.com';
       copyToClipboard(email, 'E-posta panoya kopyalandı: ' + email);
     });
   }
@@ -528,17 +528,26 @@ function showToast(msg) {
    ========================================================================== */
 function initVolunteerForm() {
   const form = document.getElementById('volunteer-form');
+  const mailBtn = document.getElementById('submit-mail-btn');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
+  function getFormData() {
     const name = document.getElementById('form-name').value.trim();
     const contact = document.getElementById('form-contact').value.trim();
     const field = document.getElementById('form-field').value;
     const msg = document.getElementById('form-msg').value.trim();
+    return { name, contact, field, msg };
+  }
 
-    // Pre-filled WhatsApp message
+  // Submit via WhatsApp
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const { name, contact, field, msg } = getFormData();
+    if (!name || !contact) {
+      showToast('Lütfen ad ve iletişim bilgilerinizi giriniz.');
+      return;
+    }
+
     const waText = encodeURIComponent(
       `Merhaba Agro-Lab Ekibi! 🌱\n\n` +
       `Ben Agro-Lab Gençlik İnisiyatifine katılmak ve gönüllü olmak istiyorum.\n\n` +
@@ -549,15 +558,40 @@ function initVolunteerForm() {
       `Topluluk çalışmalarınızda yer almaktan mutluluk duyarım!`
     );
 
-    // Official lead WhatsApp contact or group
     const waUrl = `https://wa.me/905398283413?text=${waText}`;
-
     showToast('WhatsApp açılıyor... 🚀');
     window.open(waUrl, '_blank');
 
-    // Close modal and reset form
-    const volunteerModal = document.getElementById('modal-volunteer');
-    closeModal(volunteerModal);
+    closeModal(document.getElementById('modal-volunteer'));
     form.reset();
   });
+
+  // Submit via Email
+  if (mailBtn) {
+    mailBtn.addEventListener('click', () => {
+      const { name, contact, field, msg } = getFormData();
+      if (!name || !contact) {
+        showToast('Lütfen ad ve iletişim bilgilerinizi giriniz.');
+        return;
+      }
+
+      const subject = encodeURIComponent(`Agro-Lab Gönüllü & Katılım Başvurusu - ${name}`);
+      const body = encodeURIComponent(
+        `Merhaba Agro-Lab Ekibi,\n\n` +
+        `Agro-Lab Gençlik İnisiyatifi çalışmalarına katılmak ve gönüllü olmak istiyorum.\n\n` +
+        `Ad Soyad: ${name}\n` +
+        `İletişim: ${contact}\n` +
+        `İlgi Alanı: ${field}\n` +
+        (msg ? `Not: ${msg}\n\n` : `\n`) +
+        `İyi çalışmalar dilerim.`
+      );
+
+      const mailtoUrl = `mailto:elkatmisfurkan65@gmail.com?subject=${subject}&body=${body}`;
+      showToast('E-posta açılıyor... ✉️');
+      window.location.href = mailtoUrl;
+
+      closeModal(document.getElementById('modal-volunteer'));
+      form.reset();
+    });
+  }
 }
