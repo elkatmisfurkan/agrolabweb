@@ -1,17 +1,20 @@
-# Private and sensitive documents
+# Sensitive documents
 PARTNER INFORMATION FORM (PIF).pdf
 *.pdf
+
+# Raw temporary folders
+Agro Kopyası/
+"Agro Kopyas*"/
 
 # Operating System files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# IDE and Editor files
+# IDE & editors
 .vscode/
 .idea/
 *.swp
-*.swo
 
-# Temporary scratch files
+# Temporary files
 scratch/
