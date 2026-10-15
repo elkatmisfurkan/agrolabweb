@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Agro-Lab Gençlik İnisiyatifi | Resmi Bağlantılar & Living Lab</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Agro-Lab Gençlik İnisiyatifi resmi bağlantı merkezi. Kırsal kalkınma, akıllı tarım teknolojileri, dijital gençlik çalışmaları ve Erasmus+ projelerimizle topraktan dijitale köprü kuruyoruz." />
+  <meta name="keywords" content="Agro-Lab, Agro Lab Gençlik, Akıllı Tarım, Genç Çiftçi, Agro Girişimci, Muş, Kırsal Kalkınma, IoT Tarım, Erasmus+, Yaşayan Laboratuvar" />
+  <meta name="author" content="Agro-Lab Gençlik İnisiyatifi" />
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Agro-Lab Gençlik İnisiyatifi | Resmi Bağlantılar" />
+  <meta property="og:description" content="Geleneksel topraktan dijital geleceğe: Genç Çiftçiden Agro-Girişimciye. WhatsApp grubumuza katılın ve projelerimizi takip edin." />
+  <meta property="og:image" content="assets/logo-full-transparent.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Agro-Lab Gençlik İnisiyatifi" />
+  <meta property="twitter:description" content="Akıllı tarım, kırsal kalkınma ve dijital gençlik ekosistemi." />
+  <meta property="twitter:image" content="assets/logo-full-transparent.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-icon-transparent.png" />
+  <link rel="apple-touch-icon" href="assets/logo-icon-transparent.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient Interactive Canvas -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Glowing Mesh Backdrop -->
+  <div class="mesh-background" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="app-wrapper">
+
+    <!-- Top Utility Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <span class="live-dot" title="Aktif Topluluk"></span>
+        <span class="brand-badge" data-i18n="nav_badge">AGRO-LAB LIVING LAB</span>
+      </div>
+      <div class="nav-controls">
+        <!-- Language Switcher -->
+        <button id="lang-toggle-btn" class="icon-btn" title="Dili Değiştir / Switch Language" aria-label="Dili Değiştir">
+          <span class="lang-text">EN</span>
+        </button>
+        <!-- Theme Switcher -->
+        <button id="theme-toggle-btn" class="icon-btn" title="Tema Değiştir" aria-label="Karanlık/Aydınlık Tema">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+        </button>
+        <!-- QR Code Modal Button -->
+        <button id="qr-modal-btn" class="icon-btn" title="QR Kod Göster" aria-label="QR Kod Göster">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"></path>
+          </svg>
+        </button>
+        <!-- Share Link Button -->
+        <button id="share-link-btn" class="icon-btn" title="Bağlantıyı Paylaş" aria-label="Bağlantıyı Paylaş">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Profile Section -->
+    <main class="main-card">
+      
+      <!-- Profile Header -->
+      <section class="profile-hero">
+        <div class="logo-wrapper">
+          <div class="logo-ring">
+            <img src="assets/logo-icon-transparent.png" alt="Agro-Lab Logo" class="profile-avatar" id="avatar-img" />
+          </div>
+          <span class="verified-pill" title="Onaylı Gençlik İnisiyatifi">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span data-i18n="verified">Doğrulanmış İnisiyatif</span>
+          </span>
+        </div>
+
+        <h1 class="initiative-title">Agro-Lab Gençlik</h1>
+        <p class="initiative-tagline" data-i18n="tagline">
+          Topraktan Dijitale, Genç Çiftçiden Agro-Girişimciye 🌱⚡
+        </p>
+
+        <!-- Focus Pills -->
+        <div class="badges-row">
+          <span class="badge-tag">📍 Muş / TRB2</span>
+          <span class="badge-tag">🌱 Akıllı Tarım & IoT</span>
+          <span class="badge-tag">💻 Dijital Yetkinlik</span>
+          <span class="badge-tag">🇪🇺 Erasmus+</span>
+        </div>
+
+        <!-- Banner Visual Card -->
+        <div class="banner-preview" id="banner-preview-card">
+          <img src="assets/hero-banner.jpg" alt="Agro-Lab Akıllı Sera ve Yaşayan Laboratuvar" class="banner-img" />
+          <div class="banner-overlay">
+            <div class="banner-content">
+              <span class="banner-sub" data-i18n="banner_sub">YAŞAYAN LABORATUVAR (LIVING LAB)</span>
+              <h2 class="banner-heading" data-i18n="banner_heading">Gençlik ve Tarım Teknolojileri Buluşması</h2>
+            </div>
+            <button class="banner-info-btn" id="open-about-trigger" data-i18n="learn_more_btn">Tanı & Keşfet →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stories / Highlights Bar -->
+      <section class="highlights-bar" aria-label="Öne Çıkan Başlıklar">
+        <div class="highlight-item" data-modal="modal-haberler">
+          <div class="highlight-ring">
+            <img src="assets/badge-haberler.png" alt="Haberler" />
+          </div>
+          <span class="highlight-label" data-i18n="story_haberler">Haberler</span>
+        </div>
+
+        <div class="highlight-item" data-modal="modal-faaliyetler">
+          <div class="highlight-ring">
+            <img src="assets/badge-faaliyetler.png" alt="Faaliyetler" />
+          </div>
+          <span class="highlight-label" data-i18n="story_faaliyetler">Faaliyetler</span>
+        </div>
+
+        <div class="highlight-item" data-modal="modal-basarilar">
+          <div class="highlight-ring">
+            <img src="assets/badge-basarilar.png" alt="Başarılar" />
+          </div>
+          <span class="highlight-label" data-i18n="story_basarilar">Başarılar</span>
+        </div>
+
+        <div class="highlight-item" data-modal="modal-team">
+          <div class="highlight-ring">
+            <img src="assets/badge-team.png" alt="Core Team" />
+          </div>
+          <span class="highlight-label" data-i18n="story_team">Core Team</span>
+        </div>
+      </section>
+
+      <!-- Primary Biolinks Section -->
+      <section class="links-container" aria-label="Önemli Bağlantılar">
+
+        <!-- 1. WhatsApp Group (Primary CTA) -->
+        <a href="https://chat.whatsapp.com/FNp2P9adUKmAnnVAPS4oRh?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="link-card card-whatsapp featured-card">
+          <div class="card-shimmer"></div>
+          <div class="card-icon whatsapp-bg">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.06c-1.49 0-2.95-.4-4.23-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.04 8.04 0 01-1.23-4.28c0-4.48 3.65-8.13 8.13-8.13 2.17 0 4.21.85 5.75 2.38 1.53 1.54 2.38 3.58 2.38 5.75 0 4.49-3.65 8.14-8.13 8.14zm4.47-6.09c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.02 2.57c.12.17 1.76 2.68 4.25 3.76.59.26 1.05.41 1.41.53.59.19 1.14.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+            </svg>
+          </div>
+          <div class="card-details">
+            <div class="card-title-row">
+              <span class="card-title" data-i18n="wa_title">WhatsApp Gençlik Topluluğumuz</span>
+              <span class="pulse-tag" data-i18n="wa_tag">Katılıma Açık</span>
+            </div>
+            <p class="card-description" data-i18n="wa_desc">
+              Resmi duyurular, saha atölyeleri, eğitimler ve gençlik buluşmalarımıza anında katılın.
+            </p>
+          </div>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- 2. Instagram Account -->
+        <a href="https://www.instagram.com/agro_labgenclik?exln=eWE2aGQxY2N3aWpu" target="_blank" rel="noopener noreferrer" class="link-card card-instagram">
+          <div class="card-shimmer"></div>
+          <div class="card-icon instagram-bg">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="card-details">
+            <div class="card-title-row">
+              <span class="card-title" data-i18n="ig_title">@agro_labgenclik Instagram</span>
+              <span class="badge-sub">Resmi Hesap</span>
+            </div>
+            <p class="card-description" data-i18n="ig_desc">
+              Saha anları, atölyelerimiz, hikayelerimiz ve proje güncellemelerimizi Instagram'dan keşfedin.
+            </p>
+          </div>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- 3. Join / Volunteer Application Modal Button -->
+        <button type="button" class="link-card card-action" id="volunteer-modal-btn">
+          <div class="card-shimmer"></div>
+          <div class="card-icon green-bg">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 010 7.75"></path>
+            </svg>
+          </div>
+          <div class="card-details">
+            <div class="card-title-row">
+              <span class="card-title" data-i18n="join_title">Aramıza Katıl & Gönüllü Ol</span>
+              <span class="badge-accent" data-i18n="join_badge">Başvur</span>
+            </div>
+            <p class="card-description" data-i18n="join_desc">
+              Ziraat, yazılım, tasarım veya kırsal kalkınmaya ilgi duyan gençlerle ekibimizi büyütüyoruz!
+            </p>
+          </div>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </button>
+
+        <!-- 4. Smart Agri & IoT Projects Interactive Modal -->
+        <button type="button" class="link-card card-action" id="projects-modal-btn">
+          <div class="card-shimmer"></div>
+          <div class="card-icon soil-bg">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="card-details">
+            <div class="card-title-row">
+              <span class="card-title" data-i18n="projects_title">Akıllı Tarım & IoT İnovasyonları</span>
+              <span class="badge-sub">Living Lab</span>
+            </div>
+            <p class="card-description" data-i18n="projects_desc">
+              Otonom sulama sistemleri, sensör düğümleri ve saha Living Lab projelerimizi inceleyin.
+            </p>
+          </div>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </button>
+
+        <!-- 5. Email & Direct Contact -->
+        <button type="button" class="link-card card-action" id="copy-email-btn" data-email="info@agrolab.org">
+          <div class="card-shimmer"></div>
+          <div class="card-icon dark-green-bg">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div class="card-details">
+            <div class="card-title-row">
+              <span class="card-title" data-i18n="email_title">Kurumsal İletişim & Ortaklık</span>
+              <span class="badge-sub">info@agrolab.org</span>
+            </div>
+            <p class="card-description" data-i18n="email_desc">
+              Erasmus+, kamu kurumları ve sivil toplum ortaklıkları için bize e-posta ile ulaşın.
+            </p>
+          </div>
+          <div class="card-arrow copy-indicator" title="Tıkla ve Kopyala">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+            </svg>
+          </div>
+        </button>
+
+      </section>
+
+      <!-- Expandable About & Vision Section -->
+      <section class="about-section">
+        <button type="button" class="about-accordion-btn" id="about-toggle-btn" aria-expanded="false">
+          <div class="accordion-left">
+            <span class="icon-bulb">🌱</span>
+            <span class="accordion-title" data-i18n="about_heading">Agro-Lab Gençlik İnisiyatifi Hakkında</span>
+          </div>
+          <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+
+        <div class="about-content-drawer" id="about-drawer">
+          <div class="drawer-inner">
+            <p class="about-p" data-i18n="about_p1">
+              <strong>Agro-Lab Gençlik İnisiyatifi</strong>, Muş merkezli kurulan ve Doğu Anadolu'nun zengin tarımsal potansiyelini 21. yüzyılın dijital yetkinlikleriyle sentezlemeyi hedefleyen dinamik ve bağımsız bir gençlik topluluğudur.
+            </p>
+
+            <div class="vision-quote">
+              <span class="quote-mark">“</span>
+              <p data-i18n="quote_text">
+                Amacımız; geleneksel ‘Genç Çiftçi’ algısını, teknolojiyle donatılmış ve değer üreten ‘Agro-Girişimci’ kimliğine dönüştürmektir.
+              </p>
+            </div>
+
+            <h3 class="objectives-title" data-i18n="objectives_title">Temel Hedeflerimiz</h3>
+            <ul class="objectives-list">
+              <li>
+                <span class="obj-num">1</span>
+                <div>
+                  <strong data-i18n="obj1_title">Kırsalda Dijital Okuryazarlık:</strong>
+                  <span data-i18n="obj1_desc">Kırsal bölgedeki gençlerin dijital araçlar, IoT ve veri odaklı yetkinliklerini artırmak.</span>
+                </div>
+              </li>
+              <li>
+                <span class="obj-num">2</span>
+                <div>
+                  <strong data-i18n="obj2_title">Akıllı Tarım Uygulamaları:</strong>
+                  <span data-i18n="obj2_desc">Sürdürülebilir kırsal kalkınma için sensörlü, su tasarruflu modern tarım yöntemlerini sahaya taşımak.</span>
+                </div>
+              </li>
+              <li>
+                <span class="obj-num">3</span>
+                <div>
+                  <strong data-i18n="obj3_title">Yaşayan Laboratuvar (Living Lab):</strong>
+                  <span data-i18n="obj3_desc">Ziraat ve yazılım mühendisliği öğrencileri ile kırsaldaki gençleri ortak sorunlara yenilikçi çözümler üretmek için bir araya getirmek.</span>
+                </div>
+              </li>
+              <li>
+                <span class="obj-num">4</span>
+                <div>
+                  <strong data-i18n="obj4_title">Tersine Beyin Göçü & Fırsatlar:</strong>
+                  <span data-i18n="obj4_desc">Kırsaldan kente genç göçünü azaltacak yerel tarım-teknoloji girişimciliği ekosistemi oluşturmak.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="meta-pills">
+              <span class="meta-tag"><strong>Sektör:</strong> Gençlik Çalışması & Akıllı Tarım</span>
+              <span class="meta-tag"><strong>Yapı:</strong> Bağımsız Gençlik Grubu</span>
+              <span class="meta-tag"><strong>Erasmus+ OID:</strong> E10413771</span>
+              <span class="meta-tag"><strong>Lokasyon:</strong> Muş / Türkiye</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-brand">
+          <img src="assets/logo-full-transparent.png" alt="Agro Lab Youth" class="footer-logo" />
+        </div>
+        <p class="footer-copy">
+          © 2026 Agro-Lab Gençlik İnisiyatifi • Doğu Anadolu & Avrupa Gençlik Ağı
+        </p>
+        <p class="footer-sub" data-i18n="footer_sub">
+          Topraktan güç alan, teknolojiyle yeşeren gelecek.
+        </p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- MODAL 1: QR CODE DISPLAY -->
+  <div class="modal-backdrop" id="modal-qr" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Kapat">&times;</button>
+      <div class="modal-header">
+        <div class="modal-icon-badge">📱</div>
+        <h3 class="modal-title" data-i18n="qr_title">Agro-Lab Bağlantı QR Kodu</h3>
+        <p class="modal-sub" data-i18n="qr_sub">Etkinliklerde, sahada veya afişlerde kolayca taratıp açın.</p>
+      </div>
+      <div class="modal-body qr-modal-body">
+        <div class="qr-code-frame" id="qr-container">
+          <!-- Dynamically generated SVG QR Code -->
+        </div>
+        <div class="qr-actions">
+          <button id="copy-page-url-btn" class="btn btn-secondary" data-i18n="copy_link_btn">
+            🔗 Bağlantıyı Kopyala
+          </button>
+          <a id="download-qr-btn" class="btn btn-primary" download="agro-lab-qrcode.png" data-i18n="download_qr_btn">
+            📥 QR Kodu İndir
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: HABERLER -->
+  <div class="modal-backdrop" id="modal-haberler" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Kapat">&times;</button>
+      <div class="modal-header">
+        <img src="assets/badge-haberler.png" alt="Haberler Rozeti" class="modal-badge-img" />
+        <h3 class="modal-title" data-i18n="haberler_title">Haberler & Duyurular</h3>
+        <p class="modal-sub" data-i18n="haberler_sub">Agro-Lab ekosisteminden son gelişmeler</p>
+      </div>
+      <div class="modal-body">
+        <article class="timeline-post">
+          <div class="post-date">15 Ekim 2026</div>
+          <h4 class="post-title" data-i18n="news1_title">🌾 Akıllı Tarım & IoT Prototipi Saha Testlerinde</h4>
+          <p class="post-text" data-i18n="news1_text">
+            Üniversite ve kırsal gençlik ortaklığıyla geliştirilen sensör tabanlı otonom nem ölçüm ve damla sulama istasyonumuz sahada başarıyla test edilmeye başlandı.
+          </p>
+        </article>
+        <article class="timeline-post">
+          <div class="post-date">Eylül 2026</div>
+          <h4 class="post-title" data-i18n="news2_title">🇪🇺 Erasmus+ Gençlik Değişimleri Ortaklık Çağrısı</h4>
+          <p class="post-text" data-i18n="news2_text">
+            Avrupa Birliği 'Twin Transition' (Yeşil ve Dijital Dönüşüm) öncelikleri kapsamında partner kuruluşlarımızla yeni gençlik projeleri hazırlığındayız.
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: FAALİYETLER -->
+  <div class="modal-backdrop" id="modal-faaliyetler" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Kapat">&times;</button>
+      <div class="modal-header">
+        <img src="assets/badge-faaliyetler.png" alt="Faaliyetler Rozeti" class="modal-badge-img" />
+        <h3 class="modal-title" data-i18n="faaliyet_title">Faaliyetlerimiz & Living Lab</h3>
+        <p class="modal-sub" data-i18n="faaliyet_sub">Sahada teori ile pratiğin buluştuğu noktalar</p>
+      </div>
+      <div class="modal-body">
+        <div class="feature-grid">
+          <div class="feature-box">
+            <span class="feature-icon">💧</span>
+            <h4 data-i18n="act1_title">Otonom Sulama & Sensörler</h4>
+            <p data-i18n="act1_desc">Toprak nemi ve hava sıcaklığına göre otomatik su yönetimi sağlayan düşük maliyetli IoT düğümleri.</p>
+          </div>
+          <div class="feature-box">
+            <span class="feature-icon">🎓</span>
+            <h4 data-i18n="act2_title">Akran Öğrenmesi Atölyeleri</h4>
+            <p data-i18n="act2_desc">Ziraat fakültesi öğrencileri ve genç çiftçilerin birbirine pratik ve dijital deneyim aktardığı interaktif kamplar.</p>
+          </div>
+          <div class="feature-box">
+            <span class="feature-icon">📊</span>
+            <h4 data-i18n="act3_title">Veri Tabanlı Çiftçilik</h4>
+            <p data-i18n="act3_desc">Uydu görüntüleri, açık kaynak sensör verileri ve yerel iklim projeksiyonlarıyla verim optimizasyonu.</p>
+          </div>
+          <div class="feature-box">
+            <span class="feature-icon">🤝</span>
+            <h4 data-i18n="act4_title">Karar Alıcılarla Diyalog</h4>
+            <p data-i18n="act4_desc">Genç çiftçilerin taleplerini yerel tarım müdürlükleri ve politika yapıcılarla buluşturan yuvarlak masa toplantıları.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: BAŞARILAR -->
+  <div class="modal-backdrop" id="modal-basarilar" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Kapat">&times;</button>
+      <div class="modal-header">
+        <img src="assets/badge-basarilar.png" alt="Başarılar Rozeti" class="modal-badge-img" />
+        <h3 class="modal-title" data-i18n="basari_title">Başarılarımız & Etkimiz</h3>
+        <p class="modal-sub" data-i18n="basari_sub">Büyüyen gençlik inisiyatifimizin iz bırakan adımları</p>
+      </div>
+      <div class="modal-body">
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div class="stat-label" data-i18n="stat1">Ulaşılan Kırsal Genç</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">%40</div>
+            <div class="stat-label" data-i18n="stat2">Hedef Su Tasarrufu</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4+</div>
+            <div class="stat-label" data-i18n="stat3">Üniversite Kulüp İş Birliği</div>
+          </div>
+        </div>
+        <p class="basari-text" data-i18n="basari_desc">
+          Agro-Lab, bölgedeki gençleri sadece teknoloji tüketicisi değil; yerel sorunları çözen prototip üreticileri ve eko-girişimciler haline getirme yolunda güçlü bir ivme yakalamıştır.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 5: CORE TEAM -->
+  <div class="modal-backdrop" id="modal-team" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Kapat">&times;</button>
+      <div class="modal-header">
+        <img src="assets/badge-team.png" alt="Core Team Rozeti" class="modal-badge-img" />
+        <h3 class="modal-title" data-i18n="team_title">Çekirdek Ekip (Core Team)</h3>
+        <p class="modal-sub" data-i18n="team_sub">Agro-Lab vizyonunu hayata geçiren genç liderler</p>
+      </div>
+      <div class="modal-body">
+        <div class="team-grid">
+          <div class="team-member-card">
+            <div class="member-avatar">🌱</div>
+            <div class="member-info">
+              <h4 class="member-name">Furkan ELKATMIŞ</h4>
+              <span class="member-role">Grup Lideri (Agro-Lead) & Yazılım</span>
+              <p class="member-desc" data-i18n="member1_desc">Dijital yetkinlikler, IoT sistem mimarisi, proje koordinasyonu ve gençlik çalışmaları yürütücüsü.</p>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar">🚜</div>
+            <div class="member-info">
+              <h4 class="member-name">Ömer ATEŞ</h4>
+              <span class="member-role">Saha Operasyonu & Lojistik (Agro-Field)</span>
+              <p class="member-desc" data-i18n="member2_desc">Saha deneyleri, çiftçi diyaloğu, prototip kurulumları ve kırsal lojistik yönetimi.</p>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar">🎓</div>
+            <div class="member-info">
+              <h4 class="member-name">Gönüllü & Üniversite Ağı</h4>
+              <span class="member-role">Living Lab Genç Araştırmacıları</span>
+              <p class="member-desc" data-i18n="member3_desc">Muş Alparslan Üniversitesi ve bölge üniversitelerinden ziraat, mühendislik ve sosyal bilimler öğrencileri.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 6: VOLUNTEER & JOIN FORM -->
+  <div class="modal-backdrop" id="modal-volunteer" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Kapat">&times;</button>
+      <div class="modal-header">
+        <div class="modal-icon-badge">✨</div>
+        <h3 class="modal-title" data-i18n="join_modal_title">Agro-Lab Ailesine Katıl</h3>
+        <p class="modal-sub" data-i18n="join_modal_sub">Birlikte üretelim, öğrenelim ve kırsalı dönüştürelim!</p>
+      </div>
+      <div class="modal-body">
+        <form id="volunteer-form" class="volunteer-form">
+          <div class="form-group">
+            <label for="form-name" data-i18n="form_name_lbl">Adınız Soyadınız *</label>
+            <input type="text" id="form-name" required placeholder="Örn: Ayşe Yılmaz" />
+          </div>
+          <div class="form-group">
+            <label for="form-contact" data-i18n="form_contact_lbl">Telefon / WhatsApp veya E-Posta *</label>
+            <input type="text" id="form-contact" required placeholder="Örn: 05xx xxx xx xx veya ad@gmail.com" />
+          </div>
+          <div class="form-group">
+            <label for="form-field" data-i18n="form_field_lbl">İlgi Alanınız / Bölümünüz</label>
+            <select id="form-field">
+              <option value="Ziraat / Tarım Teknolojileri">Ziraat / Tarım Teknolojileri</option>
+              <option value="Yazılım / Bilişim / IoT">Yazılım / Bilişim / IoT</option>
+              <option value="Erasmus+ & Gençlik Projeleri">Erasmus+ & Gençlik Projeleri</option>
+              <option value="Sosyal Medya & Tasarım">Sosyal Medya & Tasarım</option>
+              <option value="Kırsal Genç Çiftçi / Saha">Kırsal Genç Çiftçi / Saha</option>
+              <option value="Diğer">Diğer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="form-msg" data-i18n="form_msg_lbl">Bize Kısaca Kendinden Bahset</label>
+            <textarea id="form-msg" rows="3" placeholder="Neden katılmak istersin? Nasıl katkı sağlamayı düşünüyorsun?"></textarea>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary btn-block" data-i18n="form_submit_btn">
+              🚀 Başvurumu WhatsApp İle Gönder
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-message" role="alert" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span class="toast-text" id="toast-text">Bağlantı kopyalandı!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
