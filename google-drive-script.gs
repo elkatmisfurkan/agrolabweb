@@ -16,7 +16,8 @@
  *
  * NASIL ÇALIŞIR?
  * - Ana Drive klasörünüzün (1CyZTMs4nbbypNXl5YrnjsvtNZNe-_1UU) içindeki her alt klasörü bir "Etkinlik / Hikaye" olarak algılar.
- * - Klasörün içinde fotoğraf/video varsa otomatik olarak web sitesindeki döngüye ve galeriye ekler.
+ * - Klasör içindeki fotoğraflardan adı "web" ile başlayanları (web.jpg, web 1.jpg, web 2.jpg, web (1).jpeg vb.)
+ *   otomatik olarak ana sayfadaki dönen sunum vitrinine (showcase) yerleştirir; tüm fotoğrafları ise albüm galerisinde gösterir.
  * - Klasörün içi BOŞ ise (Örn: Awesome Founders veya yeni açtığınız bir etkinlik klasörü),
  *   otomatik olarak isEmpty: true işaretler ve sitede "✨ YAKINDA / ÇOK YAKINDA" olarak gösterir!
  */
@@ -24,11 +25,16 @@
 const ROOT_FOLDER_ID = '1CyZTMs4nbbypNXl5YrnjsvtNZNe-_1UU';
 const CACHE_TTL_SECONDS = 90; // 90 saniyelik hızlı önbellek
 
+function isWebFileName(name) {
+  const clean = (name || '').trim();
+  return /^web(\b|[\s_\-\d(.]|$)/i.test(clean);
+}
+
 function doGet(e) {
   try {
     const forceRefresh = e && e.parameter && e.parameter.refresh === '1';
     const cache = CacheService.getScriptCache();
-    const cacheKey = 'agrolab_drive_v1_' + ROOT_FOLDER_ID;
+    const cacheKey = 'agrolab_drive_v2_' + ROOT_FOLDER_ID;
 
     if (!forceRefresh) {
       const cached = cache.get(cacheKey);
@@ -57,6 +63,7 @@ function doGet(e) {
         status: totalCount === 0 ? 'coming_soon' : 'active',
         imageCount: media.images.length,
         videoCount: media.videos.length,
+        webImages: media.webImages,
         images: media.images,
         videos: media.videos
       });
@@ -100,7 +107,8 @@ function doGet(e) {
  * Klasör ve varsa alt klasörlerindeki görsel/video dosyalarını toplar
  */
 function collectFolderMedia(folder) {
-  const images = [];
+  const webImages = [];
+  const regularImages = [];
   const videos = [];
 
   function scan(currentFolder) {
@@ -114,12 +122,19 @@ function collectFolderMedia(folder) {
       const name = file.getName();
 
       if (mime.indexOf('image/') === 0) {
-        images.push({
+        const isWeb = isWebFileName(name);
+        const item = {
           id: id,
           title: name,
+          isWeb: isWeb,
           thumbUrl: 'https://drive.google.com/thumbnail?id=' + id + '&sz=w800',
           fullUrl: 'https://drive.google.com/thumbnail?id=' + id + '&sz=w1600'
-        });
+        };
+        if (isWeb) {
+          webImages.push(item);
+        } else {
+          regularImages.push(item);
+        }
       } else if (mime.indexOf('video/') === 0) {
         videos.push({
           id: id,
@@ -142,5 +157,15 @@ function collectFolderMedia(folder) {
   }
 
   scan(folder);
-  return { images: images, videos: videos };
+
+  // "web", "web 1", "web 2", "web (1)" isimli fotoğrafları doğal sırasıyla diz
+  webImages.sort(function(a, b) {
+    return a.title.localeCompare(b.title, 'tr', { numeric: true, sensitivity: 'base' });
+  });
+
+  return {
+    webImages: webImages,
+    images: webImages.concat(regularImages),
+    videos: videos
+  };
 }

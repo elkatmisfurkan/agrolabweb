@@ -630,32 +630,16 @@ try {
   }
 } catch (_) {}
 
-// Drive'daki gerçek görsel ve video ID'leri (0ms anında açılış önbelleği)
-const DRIVE_SNAPSHOT_IMAGES = ["1-bj2lgNLDTDVgy6GWLrkV1FRHkjD2mY5","1JG4oGz9QJs44Ht-Cyec94CseoL44oc-u","1dzQvVIBn_x0BqWQNQQ9Xho49GuUhADgx","1XfydbiUCLnrYDSWgKnK4z7DELENGSZyc","1nTRI9E_yhdbseJ4rdo_i0Zs2i7R-H0in","1by4BIaQQP5MiEB5Vu3AgFexl4tBp095z","1j9WwrJaGJQeUXbFjOquLVgL_SV9UqBDA","1DxYX3MZ1rm3Gt2yu2of-iP9AdVUXueHr","1jL1DCEWzLrRiq7hOUULe8qeJPUeQ396z","1V9Fw_nT1Eg_lj1mq5sLyROzgrXqNH8QE","1cLd7bKfu_8izKtMlm12ptNVk9A0Auxoz","1GJT2ZbV2IM2AxeJweUzb9PBpDCjBRHc6","14wZCBYDGXBfzdS0r-F60prl8uqy6R_MW","1FokimatxQNLVu6zx_E6kwTTb-DJDWIR_","1dbW-F7FY3ACL6UTd4bgc2uL98c6MbgrX","1SesDl70oQ95NRTnrx8NeRSVK5dykQqdI","1BQyLeAxnsOGJBaVtndNpDi5WoLQ53cBZ","191bNlF6_l2Xw9am12wf8zlvEXF0GBr_Y","1loq8PwxL-xkoGA0pp5nfXaNe88CFWCmZ","19HA4bw_mhcJ5Qb-Kaeg9LHCptbVq_gVC","1LuPu18d0Qf3fNA8G2RM0dWIGhWSHpg10","1b5GQU_5J9tKU49UVvFkX4f7bPNTNg9KD","1Ewd7VOOdVCdACRmNFVOiTaIV324MRWcj","1cc0-p4OXySf1Ep-NVhdrX7PfnzHf8Ksa","1S5hvJoMaczm7Mt4ZMhMU7v92bYnbajnE","1Mv7uMMN2neQ70NGc2tjGsKhDrcBd5tR5","1DjeDbYts_q93cx9IAMXyAOVDJpkVVr3l","1bSDLpj7_Pju2GMQXD2WAtvV2gFgEJAT-","1FAAhbFKYDXkkme00pIyKiq93IW11evSg","1Sl_qO59F8UWVhDpbgBmKjjuGWaEaMbH0","10IHl2M-sPMuJQ9Tv9ZJjVLV_3lHHqSHK","10WhP3MfDFAq-5WxzVvch_wH03z6EnPaJ","1vsEkPiTXqsJienJsR-ogJG1jGVo0LgeD","1VTpuLHkdSXHnTnQ9PNAEndmyxX2O6f6M","1yPG_TzgXFCr8gnv44Y9NE3515w7Aj8dJ","1FlcHGqZsN8twHGyRg3UEvrEOW2S6sihV","1MWu4au1a_1-HvAvy9A7Sd1ZvhKmjX4hQ","1ramFuHbqOiAqUwY6x1esW_IY0vKVR2v6","1uoLpv7ud_IrHqW14_Di_thuHofXkm-sg","1LWtup7twdSLwg5BvnfO79dN9DufXqZkv","1d-HHLDvuWNrrhIgVgL_VbFfX0Z2pd9zT","1dVrEIKexcX8W5NGXmqVWzFyhfECEqpbV","12nR0_0wL9uEY6_PmqRDGJUbpAbpTrXkm","1wl2x_x7HN-0HbXZDAWqgsnj5E9EpKTVD","104_LXa_tjIbaS6jumrpUaxadcSaiWiu5","1DIQux98L7e5TrM1v-uurcnk8xgb5L_PC","1pJ4jCe0wMlTEpj18Z5HPTh7r5ilXQT4s","1XAlMlIJsJn6gX1_rxOcsp8L7v5IwAj2j","1L-Lm_s4kLrHeQH6tZ1v5VesgrVYtAHON","1k4Hl8RWLrqXQMY_BAWMYb-FRaAivajkQ","1wfkvfIIvsBDJ3pdLZdTdS_XSpku-6rG7","1DgqwOwWFhNQLhWLUyDmQDHNzIeTR9Ark","1spScRKt9LNsaWnPDa-jt-ogMzciHjqv-","1iXlAx9lyzUQQF7Y-cRYt4hwbSJ3-PPct","1SrWU8MyL4gP5A1bpxBhM_BYeq24Brix7","1qDOWDSQNi9RUGPzYt2M-w95gD_FPkxp-","1_qcQj-Q4Vewt3WHmO53jzHNrNJXEMdwG","1loIda5_zBgxmwD0Qe7cDaJIwBFPF4iJe","1q24UMB1TqFMVu2Cky4g2q3sUk0lkZp0c","1ITpP3RRl52H9puqWoiDggYF0brxY7MjU","1cV1_MWvgRspioJrJXd07Mlxq9-KClgIO","1UL3S4SG9foxhWdbrmkPWj6JV1YAvmai2","1RzotIsSRitsynmyBwRijq-SMZpGNBXEX","1nzRCChCH_9AajXWzZehkyvdJW1OREjFQ","1SQzvkGP_1k2z7C-7aihVyQu8tJCLlgo-","1x9J6wvNjwWpSRgqTYA1LnR7vjIF83KWh","10LXhjATDKbRbLkcIkv728KrVtXDWjdk8","1eYA8kNyZp0A0ZElCKtpZDD-Lc0gpWEe8","1VAvfgedqyoQvVdB4UZamXhrrB4MS-eTc","1BhthhOZ5AUck-VBvxDBh8u9_KifUX8St","1N_lpnPPvfgnAyV7ZLGumDAKcquppRMGg","1Uk-WsZ7-y4HsnvipVl_ixxFWsqlBJhOa","1D1QJpVKLRIELVr3C5_YfUUJJVwJDL0_3","1pqKpe12VpDBLL7Uizj0-bVODRXZuEdZW","1YqdARL6SO_tU0ylTCFx_8LCvptj8ENp4","1AQyKhvmRHLI1hn01LJZSK8qR9Eise3kG","1_IbvlIbu6kuaJT2kMgAbT6V5N1Qbj3N5","17NuCO21lU4HwpX_fIH_6VRxfabJFQYhx","1bFAA17XMgVwkfaMhTjlOzyxQ94Sw1_Yx","1SRtmwF3rEuWZIyNWQOfNh9LfrQrHgHM_","1fF8Z0D5bB1BEAuDBwSDOfDZwiHG1PT_c","15lvcLtc9U_ZiGH9i6iVQPnFe2119Caud","1QqOCMGEV4Irpr41aUi_kzgqXNC6H-voT","1JhHVFZhIjrAYhT1iWzFYna4uC5pQaIRO","1gVzaDIGilY_ZM4QAFplAPlw0M5N0Clex","1dYYHWh_swaCcfPbgVBAdthxfcgYnrQWm","1t6srHiO4xBEZnbvI1-aUUONX3DNvt9y9","1M5H0aQCXMredlYFmwgXG4lsJtpCgY72D","1Va_wBbWFXpWZWYtYwX8UL88ZdP3sD3lL","1skYB1S-rIlhtPSnkFSgSkcaoM5Ad9Zoi","1acztLROuomUI8Y44d_mMIn11xES6Zqza","1N4vNRZV9F07sPQDGcA2-KOV55UvjNzUw","1gvVu5Y9NeHx_J1-KpKxfvfBvBsWafy5y","1rR92Ir7oQ65vXQHzI9Di1l6lu5Hmotbt","1CmrynL6n_r87cdc6rMED6lW2QKRMF0py","1lF6WCPr1IuWa5vbisIKEHErkpxr0_tvW","1Yus2KdcNqkyNYeLep6tinvy7PptgrhhW","1IOjKOaaVEiMm5IUf7rbR_hBIH8FSuOPl","1CKg_NedX5DjDC87OdV2B0Lko2chB8EBV","1RRmcSeSsFr8a-zrrLPXnv1nn9rhfydLk","1BCyiy09dwRE-KZ4eX82HtYsm8GWlwSNK","1AICDpWiWkoN4oSwHE6SGD7uyd4qUJh6_","1kzDwuGRR1AB5cA-LowQMviZw4nhyvcjf","13BCJ4ayfc3d6IyH8XF83xizMEK2BV94f","1YJOe_pDXLV6P2hib7beyZQkG_pp1BMAC","1uQhW7Rhi4fKiYVAR2s6501s9ASxbNryI","1R186m64ZMnHvFIPFgiRRWJpKWbH6Piwm","1NcsWtBP2mKFTBOl4f-jJxeMIPvZQMh0D","1vNw41velanm7j-p5jBYdRgjpDCJuzZBO","11NA74jYNmVA20uIc_VzQClBSfr7lhLyd","1INQcbihE4Q1qAvEtBqJRkjvwzUxRSXRG","1tNpgUBHAmqpYGPo90q4A6RPHSM8qTfhF","1kBXVKyiTj_5w3rrC9-et3sMwToSgnau8","1XJPf2LcqaqvN8poQtFvxCoBWl_rEmy8L","1qROVuyNnfOn1Qh94HprInyQKJeBP7DLH","1fwifY-kR1ByLNBykZk9gE2v0RV1AKP2J","15cGrs_q7plWzZkoEsU6xTtXpAfCKvZmo","1Xv9d5LqaPhY-ZUGnysfMIxpVHzZe2zHU","1IIW4Uo9UL-JtLDe1WhWZxf4hUuPtDBuK","1JZ77nhLAHAgifMgQvBpT8T2A9JqnDoE2","1vHxYpnoGkb9f1PjCeyHTJQKdD_qIVPzj"];
-const DRIVE_SNAPSHOT_VIDEOS = ["1PQgoTZzXrMsCubGymA7rRc72YjLE-yBe","1xZwoDv9v7T-nMEdhnAXATJq2FiSwfiNU","1sduAyu8FAJF6PZMqlFtlOo6oHrvbq0j7","1UD8WKhYVtRgf4wg6MNYdl-y6JkiXh7Oo","1bfMTcC0HTE15K1QXAWn5lpUF7fe-SABW","1JLmuYcyYvoHlDBvoULdJkSePQUSLuF0z","1WHtpvIg-13DBuxAeZ_389pv3Ggx3J8jt","1snLmf-9-Edj8FAiE4hW5odxoyyQ-5ycu","1ZA35gLCYeehIu0nxDvPZ3HimINGHEoW9","1PLcd0iNYuAqkofMKgVR4AquoyxvJR4iY","1JIYg6h9qBrBm7gD1Flxu4y7rPNaZTG7d","1Kgr34zJ9PsrgixoY05TFJtorgRAdwxt4","1j3qUnmcsndf8YWqIyUifIU1t9PSVzDLv","1Edgj7VfIABRCki0pDOPSJaMKFoM6c8Jo","1Y-Fhy4_ysxg2c3oALBCOnCUgZk7xRWLO","10Yje28bYrBdTorbx8mt3R0CLJzz7oXaO","1xI52hKKu2CE9JMYhlBIcOwhWOpRJi4ni","1cvUncnZc3xTzqLpuRIt40oRWgDYTqyMN","133xV_QIsCIWBAVZ2E_-wP17owmW6Nw2X","1Z8vbs2yk50gXRdS37AclUD8zYD6Zvvq4","1Hk0TFAL5N-Zd5iR1uCTBkbVIppNWoF4z","1kJh_faYz3jHRoI288QLtbf9lrkXoJFWX","1OjciKQnvURFo1a9o5R793bGP2MQrI36g","1mENWDDd2G3BM5JgjT7SdHjNsFwPSMS34","1LdoOyaOnW7qgLdD4hKEvmLkW3TN6Rtm-","1b2TveULYiL85pi8i_OF-4EycmEHcr_xr","10MoixeiaZCrYta03ZBwWvnhcdVG7pmEM","17Ssgkmet7WNwPOF000W1yGIqa8WMeKdo","1abuW5pQVF64nJHTZo_E91G6sc-Ziz06R","1mWoIiU5AaXVlL_wogJpXENJ5LgsFe9OO","1bDUNmBxUHENlRW9AH_lbEagCxtjgHYpo","188AXo3UnCOq67owTnfWo3360TkrVGyGD","1OuxkDhnVrudcHuZlNy939x5njmMH4GiS","1C6TFc7rcgndq_yy0D61cEaGxJ2bPLzAI","17ASjiWnLmF0RH5Trwy9wC_inSE6bC_gi","18pyTJvL048pHEyIiYbu0r9kQJMo5VcYD","1Bj-_0xCtgBQcCCQypsJ1-no7jkbARvAW","1tw4aAKu3sf1wE0Gpd0BXJ6S7wTqCh-99","1-FxIhL6ErTmhByQaQ1zQm_jeicjSJ6rk","1NgdSKSxXYZZ3UkGvbwl9H0GwgeAHig3Q","1mLx6eOU4a5nGpeYU38tK8DFq47KdC0v4","1Qf__5XVUbaTHo16jFtzNjUejmnUxc3P7","1UcL3j5YKN2-F2SEdA4gMSJYxSeSiUUZl","1Ib0j9s_UMbojebW5Jthn3rVdwKWvjkGM"];
+// ErasmusDays klasöründe "web" olarak adlandırılmış 3 vitrin fotoğrafı + 157 görsel
+const ERASMUS_WEB_IDS = ["1Kp5dS2-971yqCnI1CG_LsgiqvISFuU_R","1RgDFaTkW_MGw0FNpToXUmh3Q1c9F4UUi","12gPzeQRNvVkkaUjhESRSVdpc71Ml8vWp"];
+const ERASMUS_IMAGE_IDS = ["1Kp5dS2-971yqCnI1CG_LsgiqvISFuU_R","1RgDFaTkW_MGw0FNpToXUmh3Q1c9F4UUi","12gPzeQRNvVkkaUjhESRSVdpc71Ml8vWp","1W7oQNeN95UyOXwzYUtZpiYAQbDJIHski","1CuZ1PHwjmOrgGi3CW3nSD8unaTeu0Ns4","1VzIk_qnmBARvpJ30wTNKc2BcsBiJFJSd","1ovjB0H53VfLz-_sAe7ynUrpsu8jYcKi3","1a9INdPL7UR7JIbCpteARVdo5cedAYMr-","1doyXoV3ksfLHJF-fTg8e6Rp6fLP4xIZ4","1iWzIAaw3PihlzV0ztaPGNJc-pILuykjP","1a4byrrgwxDQnHgnQf6HNP3o5ZeIGDxNN","1G5Nvw56uIZZQG3AVzfykbuhExp2LEgHT","1g7584PryZJunT82nhx3o7o97cybcvo9L","1tBrOpLFByB5sBKKj_TX6IoCoeoltX6kd","1hFLRF4eSfyrlTd2EyLcLI6E06c1o8Ov8","1YVAyx5ubtn8cw4itAJ3WBEIfwWPAHqQb","1ZMhURyR_h9cdnx3YpdrhsmALzbZ3BtqE","1ZrO-n9_TjoTx_qJVIKRWDcznCkIcG9bZ","1MovyVnydrewKbygWq0rNoR1Zs8JNBZ1C","13OIwCMrwjvkuBEwTHoULS0xaxPt6_yZt","1e1V3JZBvnE6MDL59-LvvfumWoFDyedYH","1-HMdixfFqUJ_d11IengdcQyZx2E5jLRF","1sIf9ddU7k0CZP0ApzFnBqqH20P6StAhu","1vofRBEA6Vqbrr4Vt0U1RodVIdPOSlf3N","1U9tqmLFuoC_vZgpkBEBqHcNaaq8xwBWd","1D3TrR_tk71oYKWbNXZWP11mMevNAZeOU","18sFASJYc_92ovUFkb2vjNeI3K63KiUi9","1Vk7AOSvIa1IKIib0siN6fOFpHEZGorPg","1EEkm8ZvMZtybzY_yhiuaXlZzS9otI6eU","11tTcEB91L0oDxBvNqX2vaCuTe5XHLXW3","15mO0ECEhWScymPYgFlvVJAherOtCQCVD","1bRkeaNbo6lUC4HRSeog06J-PFyyincnr","1gRJhOBDLEpNqly2CXstZ67_kYBRQw1ZQ","17zZ8v8nBn0qpq_STt9vuEu5IeDJYw3ts","170oflhbX-oj3W56OKrKkJyVFOLzAPjFq","1yPlxeKvyGzyFoRso5OX9sK1kmX8Tp7EJ","182nAz8QldKcIck6PFS7O1da2wcQaJ-iH","1JvbzXVFRp9Ik9yptXT8QHlKtUZVUHq7-","1zGAKOXI5v38yAlgUOT7EdwG3kpQnUyDR","1OVhJUpBgDFY2s9ssh_ipAbpl6kL_-kN1","1Uu_yeKa35wcStB3PowdjeEJfLZuYpGyA","1J30XHgiUTkrWVcH8z1wCKRcoCde7xDEk","1-PEVk4Mhq2ok5rNG7npf6xNiBEpGH9se","1Sargs1f6vnVVHE-BWuUEvpGkMM483pWu","1yWms9QTN9GyTMhD0Nr2DQByIootOqhcN","1dvgxjdtNdNyHI9dcY8MiocOavl5EA5j3","1trKH3u5Ckvzp47K_KjtnXqcrZ0LUnXex","1v31pEPwlxIfbOftC050PZK2BHFV6M6zM","15KdN-PTrlexHWHCDQ7wPn2f2pS-r1SN0","1iBPwsgeqrWzfJPafeOUpZWuQISacsWNk","1nQhXcgdVKnZn7CC3twqsYm3bFzs1Nc_e","1nckcTevBBT5THym99AuUah9K0Ikgnbuv","1k1NUHBlnmjDYnEjhA-RYq3-Zq5A4z0MJ","1Dkxk6GAo-nHvy7z01kUQA_r_W5XtDFPr","1xSksBNgQ__Fwkh7WMXL0JirncTnTGYig","1VzOybHD0BOgt484rD20x6Dv-HiRQ3NMY","1Bf0n32hlF3UkrkawnNGhIQJaM0PMCJWB","19gQv8ImomKEYkYbGcYmheZYpHSxOAQmp","1BmLFSJy9VVpTkhXSXpWWZWmvmH2pUhph","1OQjqLVjgnRmpWJLQ4BaU1VP6hHQJe1l0","1rHv5Z1TSCZlAiSVnqBsgdoDFr1ZTxmE7","16KnqsPZu2RewnDnmhN5ajmQTEzTdflGE","1dfYRkfQghVcR2SfsRDV86k2R7RkR8OvD","1vcr1lN4Mf0nnfPpTADPYza2cyXE7xW9e","1Ww_RDoEUG4jn13JHonYBUML8YvkiPxBG","17xviOfLpDaj-NzXBu-C6YhTqat-8DVxc","1WbNYPTr3VJbeoWxSjLx2iGbk5iKhZ3pR","16gm1Pp7-Z1LpdCNd2REIqojqlCrn41Qh","1FgcQXSxB7I9L3WL-q6_t-cP2WvvO2KEv","14hSjTAlIA6v5uWOG5vsNMwlhIwaHQg4h","1vQFdJpfyP3J-MeBdlk2IV4vTnceq_i3p","19XVs81blV40-uO7cbs7mbpthMxz77A__","1X1lsNCz6lHm7naTqboQctnPAOVCMCurj","1dUkYU2V6oFqtMv6pWV-FRQdjEE13Fgvn","1te-Q3J1tdQHkY_5h2iSUOxbVZEVTGNnf","1R4Pz9VZhcJW8ciAZULffX2heDJ0Eaq4n","1gieo3sFiDwol8S3VMRzOGPoMhqfoTXt9","11PsNxEWUvHbjvbOp6gNN41-t1Y5tXWtX","1wP1qcbW1b5oKIHcZbrq9kGZtAEkpV1xp","1x2UTAvF4WjQfTuoxG6cp5YSZwKiriGI0","10kUa2DUqbULu8QrqxB0vh3ioUBe1UfgE","157eEKPblOhqdf8tYlYKAVXeM2J9hS17K","1AHKGYe6kSTVWaoiW-Ucd3vNAl2o6HqIF","1-wJYReSJbPsG5zvXPLYh_H6sqR-EThYz","1_r56PCCakmtf90nG8_TlvYV8Xbbxj5Nh","1gC-i4tNW-9lSRgQ7lvRfmYYark2ZBT4N","1FvKMPpur6X2HqQbDPrJi1193AkL-USCY","1gb8KaAtmckyZy3U6CKKIUgt9h8SH4Wmj","1E3eSTY1iaK6pT5x4Reb8wN94f8AROiEj","190K9FkiJXUJz-pqbT8K_seq7v4uhXCE-","1lgmlds_ECa56X9HUSDk7smgQ9pEccFiS","1qk-IPKc0TGXZ4MRvPpwaFk1Bx9qDZFfz","13pgV3T9XA077gTEIve7rn4vdJJP_Qnyo","16bnEKp93Y8PAhuw5YFEV4ursM-M7JCyl","1tBzkwQUO9y4_3J8fyuGAZg-6rEgmXIDa","1EcUme-LafzLcKsSswqmpdgvd9ogNxcRI","17BpFA_5TgzAL0fap6t2xQZjdLBN10P5r","15N4782hDMURVlvZFnsslu3a-jxEu2Lq9","1IBrvN0Bma8-_0QsSFQyQuJymx-HvZ8SN","1K1VNaDSc1T9uF_yLQGViJzFzrOM__9gi","1-BiHCWRnxMmlkaHDzfGLBOuRHS148RKA","1Wmy0_e_GVmG7xkZLW0OOoJKILLXqEj3I","1dLxdn39nR-VCLw_JGFP_nUlJZdk_t72j","1qJtj3PSEBacF11yXDmC_HplG_VCq7uUd","1P_0KU5iRzuEfP2LYOZzt0AHx_URQu2_9","1G_sKdGC_ZJtBOkP_m48zSfV9nj2x5Zjz","1us3afga3faQkZ_qspWvnwxGzPRC1hidc","17aFayimvQGiAPLtqmWVaDitNsMEbdczG","1bz-UvRBV_P311NUbBWbHYZVRIyyiMIRX","1BJ3MnWs79yMr2MDsJfZwO-IE9f1EDAmo","1vIJUXwP3APouGx2g1KACfMd4kV-iXPEi","1xHoiKkh-vUBiOb798pdWpvbGrRinzDVx","1rWR4kmQTrrC-hjGOoFjyZMiM2B6qUzRN","1iAf8tY3k9ZTU0e8uZkWGwryWEJ7SL27z","1iils9_N9SXOe6kx54GTwaTA2DFZSg6yT","1JQm1ouKIlk-TXsT8t0QjIwP77S169iwZ","1KfDH5L0bWSuD-lecAz_5QEhifN9ui8-d","1tDigGVz0lWdGAcAmQzNer2TfR0D4-jsa","1-2ja54UcysrFLeZrfgxq4vEI1cqI20ps","1wifnCrWhVMv1nUcs31gQwevq0eRvMBDI","1x0CzshaotOJ1E0u5NygH6-Q53hUz984b","1rwCIYsSS_PZ8pr9UddeyDUGn1ME843Tx","15aR4shkzVjNQIYBjeMZhtpiGpFs466Xa","1m7ZmfnjdQsDDgJ0mJYxxtgtW1OYiinAT","11TYaCI-A3F4RFGnYVkfUv9tgGZFXYDaM","18enK7VRecxe77RG49W3_BhmXTryyBV72","1hE318UyjgdXk1ZSy3D5P-yprgf52g5gs","1JfPoOKlhuR8FFGvKtFvspOrBqV95cqu1","13kBK7I6R9d63A5gJcUg3GVGy2uvF25Ji","1-6aihmtfgOmjpOD1kWqt0tJfnu0vzm0v","1u6qUZGna9vM15_ExSQr4LtZUXmXJNvBR","15S6BmTSVAJQzn-JDKknTKN6GP2c0y0i9","1rrCU6K0VT2ziTu6w_At5XdkiecPWAlrd","1FzjfblDHBSrfTmW7UqdJ7zCKXXcuE0q3","1AGjWxpwbT5TdGMZhhay_H6RNf2OoTzu-","1yKHPAZWEQNPMtj1PQ-FVyfqw8LCS_Il9","1z0xMMetWIqV5_sMDKB5o-06gVvTon1rG","1hqZNJFjJSZvAoYvQZmXkWIzTHORRM0M-","1K_iPsbY1zksbHRnMbhQnX1OEc8kTkyDo","13S0xxvLg6cKNQ2Tjp-yW0YQwxGPcituv","1u0aZw1C1ccko1zIxjyaay9HsbPAhM8_-","1NtVBtSxaSGYut_A6qmHYucllIv7acFAQ","1ZIrcD8QzZ_7erVgzl2OaeF_kG_ElUBF8","1Bljt0K5ExsvqDyPBc2RUd62DfkDyhmhE","1uN_WEK1iNoiB-bgbE5oWgRtyHRW_BFrk","15HGO6kU0CyiIAMFe1qdwfwrDS3-9Pt5t","15BqMEL2Qd31Xgjg_7iLEgbHyn2N-oYFb","1DaE3hK4x7ntwx6uou9JtiNAcXzBdzKyF","1VOaCPrdN0utGd5fj-Os_hmXf7NaVdr1y","1x1xbxUN9PTt0bphozOPhigYBaIuHbnpM","1iK5POh3j8QNZuEOLkKpYFSsJEvdbvlFs","1fcs14hlsPgjPIRVTuzZhBoTAJnUD2YFA","13Dn6vbVQ_SEE38SPjnpzYO4WU7BUIfbI","1acH4dT4U_Uc8WokhiSigviankY6RbeZQ","1769fmh5_qWnx0_C3gWz_V10uHO50oZvV","1oKsn6uvcyPFW_7YS8fuytyOt9b7ekhTe","1JNJYGIa3oHsTHJ4hk7TZ8paTh9dpmf8G"];
 
-function buildMediaObject(id, type, index) {
-  if (type === 'video') {
-    return {
-      id,
-      type: 'video',
-      title: `Etkinlik Videosu #${index + 1}`,
-      thumbUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
-      previewUrl: `https://drive.google.com/file/d/${id}/preview`,
-      viewUrl: `https://drive.google.com/file/d/${id}/view`
-    };
-  }
-  return {
-    id,
-    type: 'image',
-    title: `Etkinlik Kare #${index + 1}`,
-    thumbUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
-    fullUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w1600`,
-    viewUrl: `https://drive.google.com/file/d/${id}/view`
-  };
-}
+// Stand Günü klasöründe "web" olarak adlandırılmış 3 vitrin fotoğrafı + 121 görsel + 44 video
+const STAND_WEB_IDS = ["1-bj2lgNLDTDVgy6GWLrkV1FRHkjD2mY5","1jL1DCEWzLrRiq7hOUULe8qeJPUeQ396z","1dzQvVIBn_x0BqWQNQQ9Xho49GuUhADgx"];
+const STAND_IMAGE_IDS = ["1-bj2lgNLDTDVgy6GWLrkV1FRHkjD2mY5","1jL1DCEWzLrRiq7hOUULe8qeJPUeQ396z","1dzQvVIBn_x0BqWQNQQ9Xho49GuUhADgx","1JG4oGz9QJs44Ht-Cyec94CseoL44oc-u","1XfydbiUCLnrYDSWgKnK4z7DELENGSZyc","1nTRI9E_yhdbseJ4rdo_i0Zs2i7R-H0in","1by4BIaQQP5MiEB5Vu3AgFexl4tBp095z","1j9WwrJaGJQeUXbFjOquLVgL_SV9UqBDA","1DxYX3MZ1rm3Gt2yu2of-iP9AdVUXueHr","1V9Fw_nT1Eg_lj1mq5sLyROzgrXqNH8QE","1cLd7bKfu_8izKtMlm12ptNVk9A0Auxoz","1GJT2ZbV2IM2AxeJweUzb9PBpDCjBRHc6","14wZCBYDGXBfzdS0r-F60prl8uqy6R_MW","1FokimatxQNLVu6zx_E6kwTTb-DJDWIR_","1dbW-F7FY3ACL6UTd4bgc2uL98c6MbgrX","1SesDl70oQ95NRTnrx8NeRSVK5dykQqdI","1BQyLeAxnsOGJBaVtndNpDi5WoLQ53cBZ","191bNlF6_l2Xw9am12wf8zlvEXF0GBr_Y","1loq8PwxL-xkoGA0pp5nfXaNe88CFWCmZ","19HA4bw_mhcJ5Qb-Kaeg9LHCptbVq_gVC","1LuPu18d0Qf3fNA8G2RM0dWIGhWSHpg10","1b5GQU_5J9tKU49UVvFkX4f7bPNTNg9KD","1Ewd7VOOdVCdACRmNFVOiTaIV324MRWcj","1cc0-p4OXySf1Ep-NVhdrX7PfnzHf8Ksa","1S5hvJoMaczm7Mt4ZMhMU7v92bYnbajnE","1Mv7uMMN2neQ70NGc2tjGsKhDrcBd5tR5","1DjeDbYts_q93cx9IAMXyAOVDJpkVVr3l","1bSDLpj7_Pju2GMQXD2WAtvV2gFgEJAT-","1FAAhbFKYDXkkme00pIyKiq93IW11evSg","1Sl_qO59F8UWVhDpbgBmKjjuGWaEaMbH0","10IHl2M-sPMuJQ9Tv9ZJjVLV_3lHHqSHK","10WhP3MfDFAq-5WxzVvch_wH03z6EnPaJ","1vsEkPiTXqsJienJsR-ogJG1jGVo0LgeD","1VTpuLHkdSXHnTnQ9PNAEndmyxX2O6f6M","1yPG_TzgXFCr8gnv44Y9NE3515w7Aj8dJ","1FlcHGqZsN8twHGyRg3UEvrEOW2S6sihV","1MWu4au1a_1-HvAvy9A7Sd1ZvhKmjX4hQ","1ramFuHbqOiAqUwY6x1esW_IY0vKVR2v6","1uoLpv7ud_IrHqW14_Di_thuHofXkm-sg","1LWtup7twdSLwg5BvnfO79dN9DufXqZkv","1d-HHLDvuWNrrhIgVgL_VbFfX0Z2pd9zT","1dVrEIKexcX8W5NGXmqVWzFyhfECEqpbV","12nR0_0wL9uEY6_PmqRDGJUbpAbpTrXkm","1wl2x_x7HN-0HbXZDAWqgsnj5E9EpKTVD","104_LXa_tjIbaS6jumrpUaxadcSaiWiu5","1DIQux98L7e5TrM1v-uurcnk8xgb5L_PC","1pJ4jCe0wMlTEpj18Z5HPTh7r5ilXQT4s","1XAlMlIJsJn6gX1_rxOcsp8L7v5IwAj2j","1L-Lm_s4kLrHeQH6tZ1v5VesgrVYtAHON","1k4Hl8RWLrqXQMY_BAWMYb-FRaAivajkQ","1wfkvfIIvsBDJ3pdLZdTdS_XSpku-6rG7","1DgqwOwWFhNQLhWLUyDmQDHNzIeTR9Ark","1spScRKt9LNsaWnPDa-jt-ogMzciHjqv-","1iXlAx9lyzUQQF7Y-cRYt4hwbSJ3-PPct","1SrWU8MyL4gP5A1bpxBhM_BYeq24Brix7","1qDOWDSQNi9RUGPzYt2M-w95gD_FPkxp-","1_qcQj-Q4Vewt3WHmO53jzHNrNJXEMdwG","1loIda5_zBgxmwD0Qe7cDaJIwBFPF4iJe","1q24UMB1TqFMVu2Cky4g2q3sUk0lkZp0c","1ITpP3RRl52H9puqWoiDggYF0brxY7MjU","1cV1_MWvgRspioJrJXd07Mlxq9-KClgIO","1UL3S4SG9foxhWdbrmkPWj6JV1YAvmai2","1RzotIsSRitsynmyBwRijq-SMZpGNBXEX","1nzRCChCH_9AajXWzZehkyvdJW1OREjFQ","1SQzvkGP_1k2z7C-7aihVyQu8tJCLlgo-","1x9J6wvNjwWpSRgqTYA1LnR7vjIF83KWh","10LXhjATDKbRbLkcIkv728KrVtXDWjdk8","1eYA8kNyZp0A0ZElCKtpZDD-Lc0gpWEe8","1VAvfgedqyoQvVdB4UZamXhrrB4MS-eTc","1BhthhOZ5AUck-VBvxDBh8u9_KifUX8St","1N_lpnPPvfgnAyV7ZLGumDAKcquppRMGg","1Uk-WsZ7-y4HsnvipVl_ixxFWsqlBJhOa","1D1QJpVKLRIELVr3C5_YfUUJJVwJDL0_3","1pqKpe12VpDBLL7Uizj0-bVODRXZuEdZW","1YqdARL6SO_tU0ylTCFx_8LCvptj8ENp4","1AQyKhvmRHLI1hn01LJZSK8qR9Eise3kG","1_IbvlIbu6kuaJT2kMgAbT6V5N1Qbj3N5","17NuCO21lU4HwpX_fIH_6VRxfabJFQYhx","1bFAA17XMgVwkfaMhTjlOzyxQ94Sw1_Yx","1SRtmwF3rEuWZIyNWQOfNh9LfrQrHgHM_","1fF8Z0D5bB1BEAuDBwSDOfDZwiHG1PT_c","15lvcLtc9U_ZiGH9i6iVQPnFe2119Caud","1QqOCMGEV4Irpr41aUi_kzgqXNC6H-voT","1JhHVFZhIjrAYhT1iWzFYna4uC5pQaIRO","1gVzaDIGilY_ZM4QAFplAPlw0M5N0Clex","1dYYHWh_swaCcfPbgVBAdthxfcgYnrQWm","1t6srHiO4xBEZnbvI1-aUUONX3DNvt9y9","1M5H0aQCXMredlYFmwgXG4lsJtpCgY72D","1Va_wBbWFXpWZWYtYwX8UL88ZdP3sD3lL","1skYB1S-rIlhtPSnkFSgSkcaoM5Ad9Zoi","1acztLROuomUI8Y44d_mMIn11xES6Zqza","1N4vNRZV9F07sPQDGcA2-KOV55UvjNzUw","1gvVu5Y9NeHx_J1-KpKxfvfBvBsWafy5y","1rR92Ir7oQ65vXQHzI9Di1l6lu5Hmotbt","1CmrynL6n_r87cdc6rMED6lW2QKRMF0py","1lF6WCPr1IuWa5vbisIKEHErkpxr0_tvW","1Yus2KdcNqkyNYeLep6tinvy7PptgrhhW","1IOjKOaaVEiMm5IUf7rbR_hBIH8FSuOPl","1CKg_NedX5DjDC87OdV2B0Lko2chB8EBV","1RRmcSeSsFr8a-zrrLPXnv1nn9rhfydLk","1BCyiy09dwRE-KZ4eX82HtYsm8GWlwSNK","1AICDpWiWkoN4oSwHE6SGD7uyd4qUJh6_","1kzDwuGRR1AB5cA-LowQMviZw4nhyvcjf","13BCJ4ayfc3d6IyH8XF83xizMEK2BV94f","1YJOe_pDXLV6P2hib7beyZQkG_pp1BMAC","1uQhW7Rhi4fKiYVAR2s6501s9ASxbNryI","1R186m64ZMnHvFIPFgiRRWJpKWbH6Piwm","1NcsWtBP2mKFTBOl4f-jJxeMIPvZQMh0D","1vNw41velanm7j-p5jBYdRgjpDCJuzZBO","11NA74jYNmVA20uIc_VzQClBSfr7lhLyd","1INQcbihE4Q1qAvEtBqJRkjvwzUxRSXRG","1tNpgUBHAmqpYGPo90q4A6RPHSM8qTfhF","1kBXVKyiTj_5w3rrC9-et3sMwToSgnau8","1XJPf2LcqaqvN8poQtFvxCoBWl_rEmy8L","1qROVuyNnfOn1Qh94HprInyQKJeBP7DLH","1fwifY-kR1ByLNBykZk9gE2v0RV1AKP2J","15cGrs_q7plWzZkoEsU6xTtXpAfCKvZmo","1Xv9d5LqaPhY-ZUGnysfMIxpVHzZe2zHU","1IIW4Uo9UL-JtLDe1WhWZxf4hUuPtDBuK","1JZ77nhLAHAgifMgQvBpT8T2A9JqnDoE2","1vHxYpnoGkb9f1PjCeyHTJQKdD_qIVPzj"];
+const STAND_VIDEO_IDS = ["1PQgoTZzXrMsCubGymA7rRc72YjLE-yBe","1xZwoDv9v7T-nMEdhnAXATJq2FiSwfiNU","1sduAyu8FAJF6PZMqlFtlOo6oHrvbq0j7","1UD8WKhYVtRgf4wg6MNYdl-y6JkiXh7Oo","1bfMTcC0HTE15K1QXAWn5lpUF7fe-SABW","1JLmuYcyYvoHlDBvoULdJkSePQUSLuF0z","1WHtpvIg-13DBuxAeZ_389pv3Ggx3J8jt","1snLmf-9-Edj8FAiE4hW5odxoyyQ-5ycu","1ZA35gLCYeehIu0nxDvPZ3HimINGHEoW9","1PLcd0iNYuAqkofMKgVR4AquoyxvJR4iY","1JIYg6h9qBrBm7gD1Flxu4y7rPNaZTG7d","1Kgr34zJ9PsrgixoY05TFJtorgRAdwxt4","1j3qUnmcsndf8YWqIyUifIU1t9PSVzDLv","1Edgj7VfIABRCki0pDOPSJaMKFoM6c8Jo","1Y-Fhy4_ysxg2c3oALBCOnCUgZk7xRWLO","10Yje28bYrBdTorbx8mt3R0CLJzz7oXaO","1xI52hKKu2CE9JMYhlBIcOwhWOpRJi4ni","1cvUncnZc3xTzqLpuRIt40oRWgDYTqyMN","133xV_QIsCIWBAVZ2E_-wP17owmW6Nw2X","1Z8vbs2yk50gXRdS37AclUD8zYD6Zvvq4","1Hk0TFAL5N-Zd5iR1uCTBkbVIppNWoF4z","1kJh_faYz3jHRoI288QLtbf9lrkXoJFWX","1OjciKQnvURFo1a9o5R793bGP2MQrI36g","1mENWDDd2G3BM5JgjT7SdHjNsFwPSMS34","1LdoOyaOnW7qgLdD4hKEvmLkW3TN6Rtm-","1b2TveULYiL85pi8i_OF-4EycmEHcr_xr","10MoixeiaZCrYta03ZBwWvnhcdVG7pmEM","17Ssgkmet7WNwPOF000W1yGIqa8WMeKdo","1abuW5pQVF64nJHTZo_E91G6sc-Ziz06R","1mWoIiU5AaXVlL_wogJpXENJ5LgsFe9OO","1bDUNmBxUHENlRW9AH_lbEagCxtjgHYpo","188AXo3UnCOq67owTnfWo3360TkrVGyGD","1OuxkDhnVrudcHuZlNy939x5njmMH4GiS","1C6TFc7rcgndq_yy0D61cEaGxJ2bPLzAI","17ASjiWnLmF0RH5Trwy9wC_inSE6bC_gi","18pyTJvL048pHEyIiYbu0r9kQJMo5VcYD","1Bj-_0xCtgBQcCCQypsJ1-no7jkbARvAW","1tw4aAKu3sf1wE0Gpd0BXJ6S7wTqCh-99","1-FxIhL6ErTmhByQaQ1zQm_jeicjSJ6rk","1NgdSKSxXYZZ3UkGvbwl9H0GwgeAHig3Q","1mLx6eOU4a5nGpeYU38tK8DFq47KdC0v4","1Qf__5XVUbaTHo16jFtzNjUejmnUxc3P7","1UcL3j5YKN2-F2SEdA4gMSJYxSeSiUUZl","1Ib0j9s_UMbojebW5Jthn3rVdwKWvjkGM"];
 
-// Özel Seçilmiş En Güzel 4 Ekip Fotoğrafı (Vitrin ve Ekip Seçkisi için)
+// Özel Seçilmiş En Güzel 4 Ekip Fotoğrafı (Ekip Seçkisi için)
 const CURATED_TEAM_PHOTO_IDS = [
   "1jL1DCEWzLrRiq7hOUULe8qeJPUeQ396z", // 1. ErasmusDays Tam Kadro Ekip & Paydaşlar (Yatay)
   "1loq8PwxL-xkoGA0pp5nfXaNe88CFWCmZ", // 2. Akıllı Tarım & IoT Proje Stand Sunumu (Yatay)
@@ -663,21 +647,96 @@ const CURATED_TEAM_PHOTO_IDS = [
   "1q24UMB1TqFMVu2Cky4g2q3sUk0lkZp0c"  // 4. Standımız, Bayraklar & Tam Kadro Ekip
 ];
 
-function prioritizeCuratedPhotos(imagesArray) {
-  if (!Array.isArray(imagesArray) || imagesArray.length === 0) return imagesArray;
-  const curated = [];
-  const rest = [];
-  const idMap = new Map(imagesArray.map(img => [img.id, img]));
+const KNOWN_WEB_ID_SET = new Set([...ERASMUS_WEB_IDS, ...STAND_WEB_IDS]);
 
-  CURATED_TEAM_PHOTO_IDS.forEach(cid => {
-    if (idMap.has(cid)) {
-      curated.push(idMap.get(cid));
-      idMap.delete(cid);
+/**
+ * Drive'da adı "web" ile başlayan fotoğrafları algılar:
+ * Örn: "web.jpg", "web.jpeg", "web 1.jpg", "web 2.jpg", "web (1).jpg", "web_1.png", "web-2.jpg"
+ */
+function isWebNamed(title) {
+  const clean = (title || '').trim();
+  return /^web(\b|[\s_\-\d(.]|$)/i.test(clean);
+}
+
+function buildMediaObject(id, type, index, customTitle = '', isWeb = false) {
+  if (type === 'video') {
+    return {
+      id,
+      type: 'video',
+      title: customTitle || `Etkinlik Videosu #${index + 1}`,
+      thumbUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
+      previewUrl: `https://drive.google.com/file/d/${id}/preview`,
+      viewUrl: `https://drive.google.com/file/d/${id}/view`
+    };
+  }
+  const webFlag = Boolean(isWeb || isWebNamed(customTitle) || KNOWN_WEB_ID_SET.has(id));
+  return {
+    id,
+    type: 'image',
+    isWeb: webFlag,
+    title: customTitle || (webFlag ? `web ${index + 1}.jpg` : `Etkinlik Kare #${index + 1}`),
+    thumbUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
+    fullUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w1600`,
+    viewUrl: `https://drive.google.com/file/d/${id}/view`
+  };
+}
+
+/**
+ * Klasördeki fotoğrafları düzenler:
+ * - Adı "web" olanları (web, web 1, web 2, web 3...) doğal sırasıyla ayırır ve sunum vitrinine (showcaseImages) koyar.
+ * - Albüm galerisinde (allImages) önce "web" fotoğrafları, ardından diğer tüm fotoğraflar yer alır.
+ */
+function organizeFolderImages(imagesArray, explicitWebImages) {
+  if (!Array.isArray(imagesArray) || imagesArray.length === 0) {
+    return { showcaseImages: [], allImages: [] };
+  }
+
+  const webList = [];
+  const regularList = [];
+  const seenIds = new Set();
+
+  if (Array.isArray(explicitWebImages) && explicitWebImages.length > 0) {
+    explicitWebImages.forEach((img, idx) => {
+      if (!img || !img.id || seenIds.has(img.id)) return;
+      seenIds.add(img.id);
+      webList.push({
+        id: img.id,
+        type: 'image',
+        isWeb: true,
+        title: img.title || `web ${idx + 1}`,
+        thumbUrl: img.thumbUrl || `https://drive.google.com/thumbnail?id=${img.id}&sz=w800`,
+        fullUrl: img.fullUrl || `https://drive.google.com/thumbnail?id=${img.id}&sz=w1600`,
+        viewUrl: img.viewUrl || `https://drive.google.com/file/d/${img.id}/view`
+      });
+    });
+  }
+
+  imagesArray.forEach((img) => {
+    if (!img || !img.id) return;
+    const isWeb = Boolean(img.isWeb || isWebNamed(img.title) || KNOWN_WEB_ID_SET.has(img.id));
+    if (seenIds.has(img.id)) return;
+    seenIds.add(img.id);
+
+    const normalizedImg = {
+      ...img,
+      type: 'image',
+      isWeb
+    };
+
+    if (isWeb) {
+      webList.push(normalizedImg);
+    } else {
+      regularList.push(normalizedImg);
     }
   });
 
-  idMap.forEach(img => rest.push(img));
-  return curated.concat(rest);
+  // "web", "web 1", "web 2", "web (1)" doğal sıralama
+  webList.sort((a, b) => (a.title || '').localeCompare(b.title || '', 'tr', { numeric: true, sensitivity: 'base' }));
+
+  const allImages = webList.concat(regularList);
+  const showcaseImages = webList.length > 0 ? webList : allImages.slice(0, 4);
+
+  return { showcaseImages, allImages };
 }
 
 function getFolderIcon(name, isEmpty) {
@@ -703,10 +762,22 @@ function getEmptyFolderDescription(name) {
 }
 
 function createInitialDriveFolders() {
-  const rawImages = DRIVE_SNAPSHOT_IMAGES.map((id, i) => buildMediaObject(id, 'image', i));
-  const snapshotImages = prioritizeCuratedPhotos(rawImages);
-  const curatedTeamImages = CURATED_TEAM_PHOTO_IDS.map((id, i) => buildMediaObject(id, 'image', i));
-  const snapshotVideos = DRIVE_SNAPSHOT_VIDEOS.map((id, i) => buildMediaObject(id, 'video', i));
+  const erasmusWebSet = new Set(ERASMUS_WEB_IDS);
+  const erasmusRaw = ERASMUS_IMAGE_IDS.map((id, i) =>
+    buildMediaObject(id, 'image', i, erasmusWebSet.has(id) ? `web ${ERASMUS_WEB_IDS.indexOf(id) + 1}.jpeg` : `ErasmusDays #${i + 1}`, erasmusWebSet.has(id))
+  );
+  const erasmusOrganized = organizeFolderImages(erasmusRaw);
+
+  const standWebSet = new Set(STAND_WEB_IDS);
+  const standRaw = STAND_IMAGE_IDS.map((id, i) =>
+    buildMediaObject(id, 'image', i, standWebSet.has(id) ? `web ${STAND_WEB_IDS.indexOf(id) + 1}.jpg` : `Stand Günü #${i + 1}`, standWebSet.has(id))
+  );
+  const standOrganized = organizeFolderImages(standRaw);
+  const standVideos = STAND_VIDEO_IDS.map((id, i) => buildMediaObject(id, 'video', i));
+
+  const curatedTeamImages = CURATED_TEAM_PHOTO_IDS.map((id, i) =>
+    buildMediaObject(id, 'image', i, `web ${i + 1}.jpg`, true)
+  );
 
   return [
     {
@@ -714,22 +785,25 @@ function createInitialDriveFolders() {
       name: 'ErasmusDays',
       icon: '🇪🇺',
       isEmpty: false,
-      images: snapshotImages,
-      videos: snapshotVideos
+      showcaseImages: erasmusOrganized.showcaseImages,
+      images: erasmusOrganized.allImages,
+      videos: []
     },
     {
       id: 'curated-team-photos',
       name: 'Ekip Kareleri',
       icon: '👥',
       isEmpty: false,
+      showcaseImages: curatedTeamImages,
       images: curatedTeamImages,
       videos: []
     },
     {
-      id: 'awesome-founders-folder',
+      id: '1-UhbCULOMvz5SnmeZJ43rpwA6IawtJcY',
       name: 'Awesome Founders',
       icon: '🚀',
       isEmpty: true,
+      showcaseImages: [],
       images: [],
       videos: []
     },
@@ -738,8 +812,9 @@ function createInitialDriveFolders() {
       name: 'Stand Günü',
       icon: '📸',
       isEmpty: false,
-      images: snapshotImages,
-      videos: snapshotVideos
+      showcaseImages: standOrganized.showcaseImages,
+      images: standOrganized.allImages,
+      videos: standVideos
     }
   ];
 }
@@ -870,6 +945,14 @@ function initDriveStoriesEngine() {
     }
   }
 
+  function getShowcaseList(folder) {
+    if (!folder || folder.isEmpty) return [];
+    if (Array.isArray(folder.showcaseImages) && folder.showcaseImages.length > 0) {
+      return folder.showcaseImages;
+    }
+    return (folder.images || []).slice(0, PHOTOS_PER_FOLDER_CYCLE);
+  }
+
   function updateShowcaseStage(crossfade = true) {
     const folder = folders[activeFolderIndex];
     if (!folder) return;
@@ -886,7 +969,9 @@ function initDriveStoriesEngine() {
       headingEl.textContent = `${folder.icon || getFolderIcon(folder.name, folder.isEmpty)} ${folder.name}`;
     }
 
-    if (folder.isEmpty || folder.images.length === 0) {
+    const showcaseList = getShowcaseList(folder);
+
+    if (folder.isEmpty || showcaseList.length === 0) {
       // Show "Yakında" (Coming Soon) stage for empty folders
       if (emptyStage) {
         emptyStage.classList.add('visible');
@@ -908,14 +993,14 @@ function initDriveStoriesEngine() {
         openGalleryBtn.textContent = currentLang === 'en' ? '✨ Coming Soon →' : '✨ Yakında →';
       }
     } else {
-      // Hide Empty Stage & Crossfade Active Photo
+      // Hide Empty Stage & Crossfade Active "web" Showcase Photo
       if (emptyStage) {
         emptyStage.classList.remove('visible');
         emptyStage.setAttribute('aria-hidden', 'true');
       }
 
-      const safeIdx = activeImageIndex % folder.images.length;
-      const imgObj = folder.images[safeIdx];
+      const safeIdx = activeImageIndex % showcaseList.length;
+      const imgObj = showcaseList[safeIdx];
       const nextUrl = imgObj.thumbUrl;
 
       if (crossfade && imgA && imgB) {
@@ -942,7 +1027,13 @@ function initDriveStoriesEngine() {
       }
       if (photoCounter) {
         const videoNote = folder.videos.length > 0 ? ` • 🎬 ${folder.videos.length}` : '';
-        photoCounter.textContent = `🖼️ ${safeIdx + 1} / ${folder.images.length}${videoNote}`;
+        if (folder.images.length > showcaseList.length) {
+          photoCounter.textContent = currentLang === 'en'
+            ? `🖼️ Featured ${safeIdx + 1}/${showcaseList.length} • Album: ${folder.images.length}${videoNote}`
+            : `🖼️ Sunum ${safeIdx + 1}/${showcaseList.length} • Albüm: ${folder.images.length}${videoNote}`;
+        } else {
+          photoCounter.textContent = `🖼️ ${safeIdx + 1} / ${folder.images.length}${videoNote}`;
+        }
       }
       if (openGalleryBtn) {
         openGalleryBtn.className = 'banner-info-btn';
@@ -978,19 +1069,20 @@ function initDriveStoriesEngine() {
     const folder = folders[activeFolderIndex];
     if (!folder) return;
 
-    if (folder.isEmpty || folder.images.length === 0) {
+    const showcaseList = getShowcaseList(folder);
+    if (folder.isEmpty || showcaseList.length === 0) {
       // Advance directly to next folder
       selectShowcaseFolder(activeFolderIndex + 1);
       return;
     }
 
     folderPhotoSteps++;
-    const maxSteps = Math.min(PHOTOS_PER_FOLDER_CYCLE, folder.images.length);
+    const maxSteps = showcaseList.length;
     if (folderPhotoSteps >= maxSteps) {
-      // Move to the next folder so all folders (including Awesome Founders) rotate!
+      // Move to the next folder after rotating all "web" showcase photos in this folder
       selectShowcaseFolder(activeFolderIndex + 1);
     } else {
-      activeImageIndex = (activeImageIndex + 1) % folder.images.length;
+      activeImageIndex = (activeImageIndex + 1) % showcaseList.length;
       elapsedMs = 0;
       updateShowcaseStage(true);
     }
@@ -1004,15 +1096,16 @@ function initDriveStoriesEngine() {
       const folder = folders[activeFolderIndex];
       if (!folder) return;
 
+      const showcaseList = getShowcaseList(folder);
       elapsedMs += TICK_MS;
-      if (folder.isEmpty || folder.images.length === 0) {
+      if (folder.isEmpty || showcaseList.length === 0) {
         const ratio = elapsedMs / EMPTY_FOLDER_DURATION_MS;
         updateProgressBars(ratio);
         if (elapsedMs >= EMPTY_FOLDER_DURATION_MS) {
           stepNextSlide();
         }
       } else {
-        const maxSteps = Math.min(PHOTOS_PER_FOLDER_CYCLE, folder.images.length);
+        const maxSteps = Math.max(1, showcaseList.length);
         const totalFolderDuration = maxSteps * PHOTO_INTERVAL_MS;
         const currentFolderElapsed = folderPhotoSteps * PHOTO_INTERVAL_MS + elapsedMs;
         updateProgressBars(currentFolderElapsed / totalFolderDuration);
@@ -1402,6 +1495,7 @@ function initDriveStoriesEngine() {
       const imgs = (f.images || []).map((img, i) => ({
         id: img.id,
         type: 'image',
+        isWeb: Boolean(img.isWeb || isWebNamed(img.title) || KNOWN_WEB_ID_SET.has(img.id)),
         title: img.title || `Görsel #${i + 1}`,
         thumbUrl: img.thumbUrl || `https://drive.google.com/thumbnail?id=${img.id}&sz=w800`,
         fullUrl: img.fullUrl || `https://drive.google.com/thumbnail?id=${img.id}&sz=w1600`,
@@ -1415,37 +1509,32 @@ function initDriveStoriesEngine() {
         previewUrl: vid.previewUrl || `https://drive.google.com/file/d/${vid.id}/preview`,
         viewUrl: vid.viewUrl || `https://drive.google.com/file/d/${vid.id}/view`
       }));
-      const isEmpty = imgs.length === 0 && vids.length === 0;
+      const organized = organizeFolderImages(imgs, f.webImages);
+      const isEmpty = organized.allImages.length === 0 && vids.length === 0;
       return {
         id: f.id,
         name: f.name,
         icon: getFolderIcon(f.name, isEmpty),
         isEmpty,
-        images: prioritizeCuratedPhotos(imgs),
+        showcaseImages: organized.showcaseImages,
+        images: organized.allImages,
         videos: vids
       };
     });
 
-    // Akıllı Eşleştirme: Eğer ErasmusDays klasörü Drive'da henüz boşsa ve Stand Günü doluysa,
-    // ErasmusDays'in ilk sırada 4 özel ekip fotoğrafıyla dolu görünmesini sağla
-    const erasmusFolder = normalized.find(f => f.name.toLowerCase().includes('erasmus'));
-    const standFolder = normalized.find(f => f.name.toLowerCase().includes('stand'));
-    if (erasmusFolder && erasmusFolder.isEmpty && standFolder && !standFolder.isEmpty) {
-      erasmusFolder.images = prioritizeCuratedPhotos(standFolder.images);
-      erasmusFolder.videos = standFolder.videos;
-      erasmusFolder.isEmpty = false;
-      erasmusFolder.icon = '🇪🇺';
-    }
-
     // 4 Özel Seçilmiş Ekip Fotoğrafı ("Ekip Kareleri") sekmesini koru
     const hasTeamFolder = normalized.some(f => f.name.toLowerCase().includes('ekip'));
     if (!hasTeamFolder) {
+      const curatedTeamImages = CURATED_TEAM_PHOTO_IDS.map((id, i) =>
+        buildMediaObject(id, 'image', i, `web ${i + 1}.jpg`, true)
+      );
       normalized.push({
         id: 'curated-team-photos',
         name: 'Ekip Kareleri',
         icon: '👥',
         isEmpty: false,
-        images: CURATED_TEAM_PHOTO_IDS.map((id, i) => buildMediaObject(id, 'image', i)),
+        showcaseImages: curatedTeamImages,
+        images: curatedTeamImages,
         videos: []
       });
     }
@@ -1454,10 +1543,11 @@ function initDriveStoriesEngine() {
     const hasFounders = normalized.some(f => f.name.toLowerCase().includes('founder'));
     if (!hasFounders) {
       normalized.push({
-        id: 'awesome-founders-folder',
+        id: '1-UhbCULOMvz5SnmeZJ43rpwA6IawtJcY',
         name: 'Awesome Founders',
         icon: '🚀',
         isEmpty: true,
+        showcaseImages: [],
         images: [],
         videos: []
       });
