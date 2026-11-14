@@ -514,6 +514,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 28%;
   opacity: 0;
   transform: scale(1.06);
   transition: opacity 0.75s ease, transform 4.5s ease-out;
@@ -1510,6 +1511,86 @@ body {
   font-size: 0.78rem;
   color: var(--text-muted);
   line-height: 1.4;
+}
+
+/* 4 Curated Team Photos Grid inside Core Team & Showcase */
+.team-curated-section {
+  margin-top: 0.65rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--card-border);
+}
+
+.team-curated-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.team-curated-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.team-curated-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--badge-border);
+}
+
+.team-curated-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+.team-photo-card {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+  transition: var(--transition-fast);
+}
+
+.team-photo-card:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.25);
+}
+
+.team-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.team-photo-card:hover img {
+  transform: scale(1.08);
+}
+
+.team-photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.35rem 0.55rem;
+  background: linear-gradient(to top, rgba(4, 10, 7, 0.92), transparent);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 600;
 }
 
 /* Forms */

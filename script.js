@@ -655,9 +655,35 @@ function buildMediaObject(id, type, index) {
   };
 }
 
+// Özel Seçilmiş En Güzel 4 Ekip Fotoğrafı (Vitrin ve Ekip Seçkisi için)
+const CURATED_TEAM_PHOTO_IDS = [
+  "1jL1DCEWzLrRiq7hOUULe8qeJPUeQ396z", // 1. ErasmusDays Tam Kadro Ekip & Paydaşlar (Yatay)
+  "1loq8PwxL-xkoGA0pp5nfXaNe88CFWCmZ", // 2. Akıllı Tarım & IoT Proje Stand Sunumu (Yatay)
+  "1lF6WCPr1IuWa5vbisIKEHErkpxr0_tvW", // 3. Agro-Lab Gençlik Ekibi Saha Özçekimi (Yatay)
+  "1q24UMB1TqFMVu2Cky4g2q3sUk0lkZp0c"  // 4. Standımız, Bayraklar & Tam Kadro Ekip
+];
+
+function prioritizeCuratedPhotos(imagesArray) {
+  if (!Array.isArray(imagesArray) || imagesArray.length === 0) return imagesArray;
+  const curated = [];
+  const rest = [];
+  const idMap = new Map(imagesArray.map(img => [img.id, img]));
+
+  CURATED_TEAM_PHOTO_IDS.forEach(cid => {
+    if (idMap.has(cid)) {
+      curated.push(idMap.get(cid));
+      idMap.delete(cid);
+    }
+  });
+
+  idMap.forEach(img => rest.push(img));
+  return curated.concat(rest);
+}
+
 function getFolderIcon(name, isEmpty) {
   const lower = (name || '').toLowerCase();
   if (lower.includes('erasmus')) return '🇪🇺';
+  if (lower.includes('ekip') || lower.includes('team')) return '👥';
   if (lower.includes('founder') || lower.includes('girişim')) return '🚀';
   if (lower.includes('stand')) return '📸';
   if (lower.includes('atölye') || lower.includes('workshop')) return '🌱';
@@ -677,7 +703,9 @@ function getEmptyFolderDescription(name) {
 }
 
 function createInitialDriveFolders() {
-  const snapshotImages = DRIVE_SNAPSHOT_IMAGES.map((id, i) => buildMediaObject(id, 'image', i));
+  const rawImages = DRIVE_SNAPSHOT_IMAGES.map((id, i) => buildMediaObject(id, 'image', i));
+  const snapshotImages = prioritizeCuratedPhotos(rawImages);
+  const curatedTeamImages = CURATED_TEAM_PHOTO_IDS.map((id, i) => buildMediaObject(id, 'image', i));
   const snapshotVideos = DRIVE_SNAPSHOT_VIDEOS.map((id, i) => buildMediaObject(id, 'video', i));
 
   return [
@@ -688,6 +716,14 @@ function createInitialDriveFolders() {
       isEmpty: false,
       images: snapshotImages,
       videos: snapshotVideos
+    },
+    {
+      id: 'curated-team-photos',
+      name: 'Ekip Kareleri',
+      icon: '👥',
+      isEmpty: false,
+      images: curatedTeamImages,
+      videos: []
     },
     {
       id: 'awesome-founders-folder',
@@ -702,7 +738,7 @@ function createInitialDriveFolders() {
       name: 'Stand Günü',
       icon: '📸',
       isEmpty: false,
-      images: snapshotImages.slice(12).concat(snapshotImages.slice(0, 12)),
+      images: snapshotImages,
       videos: snapshotVideos
     }
   ];
@@ -1024,6 +1060,15 @@ function initDriveStoriesEngine() {
       openEventsGallery(0);
     });
   }
+
+  // Core Team Modal'daki 4 Özel Seçilmiş Ekip Fotoğrafına tıklanınca tam ekran aç
+  document.querySelectorAll('#team-curated-grid .team-photo-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const idx = parseInt(card.getAttribute('data-photo-idx') || '0', 10);
+      currentLightboxList = CURATED_TEAM_PHOTO_IDS.map((id, i) => buildMediaObject(id, 'image', i));
+      openLightbox(idx, 'Ekip Kareleri (Özel Seçki)');
+    });
+  });
 
   // =========================================================================
   // GALLERY MODAL & LIGHTBOX LOGIC
@@ -1376,20 +1421,33 @@ function initDriveStoriesEngine() {
         name: f.name,
         icon: getFolderIcon(f.name, isEmpty),
         isEmpty,
-        images: imgs,
+        images: prioritizeCuratedPhotos(imgs),
         videos: vids
       };
     });
 
     // Akıllı Eşleştirme: Eğer ErasmusDays klasörü Drive'da henüz boşsa ve Stand Günü doluysa,
-    // ErasmusDays'in ilk sırada dolu görünmesini sağla
+    // ErasmusDays'in ilk sırada 4 özel ekip fotoğrafıyla dolu görünmesini sağla
     const erasmusFolder = normalized.find(f => f.name.toLowerCase().includes('erasmus'));
     const standFolder = normalized.find(f => f.name.toLowerCase().includes('stand'));
     if (erasmusFolder && erasmusFolder.isEmpty && standFolder && !standFolder.isEmpty) {
-      erasmusFolder.images = standFolder.images;
+      erasmusFolder.images = prioritizeCuratedPhotos(standFolder.images);
       erasmusFolder.videos = standFolder.videos;
       erasmusFolder.isEmpty = false;
       erasmusFolder.icon = '🇪🇺';
+    }
+
+    // 4 Özel Seçilmiş Ekip Fotoğrafı ("Ekip Kareleri") sekmesini koru
+    const hasTeamFolder = normalized.some(f => f.name.toLowerCase().includes('ekip'));
+    if (!hasTeamFolder) {
+      normalized.push({
+        id: 'curated-team-photos',
+        name: 'Ekip Kareleri',
+        icon: '👥',
+        isEmpty: false,
+        images: CURATED_TEAM_PHOTO_IDS.map((id, i) => buildMediaObject(id, 'image', i)),
+        videos: []
+      });
     }
 
     // Awesome Founders klasörü Drive'da henüz yoksa "Yakında" (boş klasör) olarak ekle
@@ -1405,13 +1463,16 @@ function initDriveStoriesEngine() {
       });
     }
 
-    // Sıralama: Önce ErasmusDays, sonra Awesome Founders / diğer klasörler
+    // Sıralama: 1. ErasmusDays, 2. Ekip Kareleri, 3. Awesome Founders, 4. Diğerleri
     normalized.sort((a, b) => {
-      const aEr = a.name.toLowerCase().includes('erasmus');
-      const bEr = b.name.toLowerCase().includes('erasmus');
-      if (aEr && !bEr) return -1;
-      if (!aEr && bEr) return 1;
-      return 0;
+      const rank = (name) => {
+        const n = name.toLowerCase();
+        if (n.includes('erasmus')) return 1;
+        if (n.includes('ekip')) return 2;
+        if (n.includes('founder')) return 3;
+        return 4;
+      };
+      return rank(a.name) - rank(b.name);
     });
 
     folders = normalized;
