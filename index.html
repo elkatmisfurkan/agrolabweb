@@ -181,9 +181,21 @@
             </div>
           </div>
 
-          <!-- Dynamic Google Drive Folder Switcher Bar -->
-          <div class="drive-folders-bar" id="drive-folders-bar" role="tablist" aria-label="Drive Etkinlik Klasörleri">
-            <!-- Populated dynamically from Google Drive folders -->
+          <!-- Dynamic Google Drive Folder Switcher Bar with Horizontal Scroll Controls -->
+          <div class="drive-folders-scroller" id="drive-folders-scroller">
+            <button type="button" class="folders-scroll-btn prev" id="folders-scroll-left" aria-label="Klasörleri Sola Kaydır" title="Sola Kaydır">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="drive-folders-bar" id="drive-folders-bar" role="tablist" aria-label="Drive Etkinlik Klasörleri">
+              <!-- Populated dynamically from Google Drive folders -->
+            </div>
+            <button type="button" class="folders-scroll-btn next" id="folders-scroll-right" aria-label="Klasörleri Sağa Kaydır" title="Sağa Kaydır">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
           </div>
         </div>
       </section>

@@ -775,10 +775,6 @@ function createInitialDriveFolders() {
   const standOrganized = organizeFolderImages(standRaw);
   const standVideos = STAND_VIDEO_IDS.map((id, i) => buildMediaObject(id, 'video', i));
 
-  const curatedTeamImages = CURATED_TEAM_PHOTO_IDS.map((id, i) =>
-    buildMediaObject(id, 'image', i, `web ${i + 1}.jpg`, true)
-  );
-
   return [
     {
       id: '1dFB1cQUgcag_s176DaKaKMwTX5kxbRji',
@@ -790,13 +786,13 @@ function createInitialDriveFolders() {
       videos: []
     },
     {
-      id: 'curated-team-photos',
-      name: 'Ekip Kareleri',
-      icon: '👥',
+      id: '1gS4lK44Y_GphMHq8B-wXP8mA56I0gkdp',
+      name: 'Stand Günü',
+      icon: '📸',
       isEmpty: false,
-      showcaseImages: curatedTeamImages,
-      images: curatedTeamImages,
-      videos: []
+      showcaseImages: standOrganized.showcaseImages,
+      images: standOrganized.allImages,
+      videos: standVideos
     },
     {
       id: '1-UhbCULOMvz5SnmeZJ43rpwA6IawtJcY',
@@ -806,15 +802,6 @@ function createInitialDriveFolders() {
       showcaseImages: [],
       images: [],
       videos: []
-    },
-    {
-      id: '1gS4lK44Y_GphMHq8B-wXP8mA56I0gkdp',
-      name: 'Stand Günü',
-      icon: '📸',
-      isEmpty: false,
-      showcaseImages: standOrganized.showcaseImages,
-      images: standOrganized.allImages,
-      videos: standVideos
     }
   ];
 }
@@ -857,6 +844,8 @@ function initDriveStoriesEngine() {
   const prevBtn = document.getElementById('showcase-prev-btn');
   const nextBtn = document.getElementById('showcase-next-btn');
   const foldersBar = document.getElementById('drive-folders-bar');
+  const foldersScrollLeftBtn = document.getElementById('folders-scroll-left');
+  const foldersScrollRightBtn = document.getElementById('folders-scroll-right');
 
   // DOM Elements - Gallery Modal
   const galleryTabs = document.getElementById('gallery-folder-tabs');
@@ -957,10 +946,15 @@ function initDriveStoriesEngine() {
     const folder = folders[activeFolderIndex];
     if (!folder) return;
 
-    // Update active state on chips
+    // Update active state on chips & smoothly scroll active chip into horizontal view
     if (foldersBar) {
       Array.from(foldersBar.children).forEach((chip, idx) => {
-        chip.classList.toggle('active', idx === activeFolderIndex);
+        const isActive = idx === activeFolderIndex;
+        chip.classList.toggle('active', isActive);
+        if (isActive && foldersBar.scrollWidth > foldersBar.clientWidth) {
+          const targetScroll = chip.offsetLeft - (foldersBar.clientWidth / 2) + (chip.offsetWidth / 2);
+          foldersBar.scrollTo({ left: Math.max(0, targetScroll), behavior: 'smooth' });
+        }
       });
     }
 
@@ -1146,6 +1140,37 @@ function initDriveStoriesEngine() {
       stepNextSlide();
     });
   }
+
+  // Klasör Barı Sağ / Sol Kaydırma Kontrolleri + Mouse Tekerleği ile Yatay Kaydırma
+  if (foldersScrollLeftBtn && foldersBar) {
+    foldersScrollLeftBtn.addEventListener('click', () => {
+      if (foldersBar.scrollWidth > foldersBar.clientWidth + 4) {
+        foldersBar.scrollBy({ left: -180, behavior: 'smooth' });
+      } else {
+        selectShowcaseFolder(activeFolderIndex - 1);
+      }
+    });
+  }
+
+  if (foldersScrollRightBtn && foldersBar) {
+    foldersScrollRightBtn.addEventListener('click', () => {
+      if (foldersBar.scrollWidth > foldersBar.clientWidth + 4) {
+        foldersBar.scrollBy({ left: 180, behavior: 'smooth' });
+      } else {
+        selectShowcaseFolder(activeFolderIndex + 1);
+      }
+    });
+  }
+
+  [foldersBar, galleryTabs].forEach(bar => {
+    if (!bar) return;
+    bar.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && bar.scrollWidth > bar.clientWidth) {
+        e.preventDefault();
+        bar.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+  });
 
   if (faaliyetOpenGalleryBtn) {
     faaliyetOpenGalleryBtn.addEventListener('click', () => {
@@ -1522,23 +1547,6 @@ function initDriveStoriesEngine() {
       };
     });
 
-    // 4 Özel Seçilmiş Ekip Fotoğrafı ("Ekip Kareleri") sekmesini koru
-    const hasTeamFolder = normalized.some(f => f.name.toLowerCase().includes('ekip'));
-    if (!hasTeamFolder) {
-      const curatedTeamImages = CURATED_TEAM_PHOTO_IDS.map((id, i) =>
-        buildMediaObject(id, 'image', i, `web ${i + 1}.jpg`, true)
-      );
-      normalized.push({
-        id: 'curated-team-photos',
-        name: 'Ekip Kareleri',
-        icon: '👥',
-        isEmpty: false,
-        showcaseImages: curatedTeamImages,
-        images: curatedTeamImages,
-        videos: []
-      });
-    }
-
     // Awesome Founders klasörü Drive'da henüz yoksa "Yakında" (boş klasör) olarak ekle
     const hasFounders = normalized.some(f => f.name.toLowerCase().includes('founder'));
     if (!hasFounders) {
@@ -1553,16 +1561,14 @@ function initDriveStoriesEngine() {
       });
     }
 
-    // Sıralama: 1. ErasmusDays, 2. Ekip Kareleri, 3. Awesome Founders, 4. Diğerleri
+    // Sıralama: 1. ErasmusDays, 2. Dolu Etkinlik Klasörleri, 3. Boş ("Yakında") Klasörler
     normalized.sort((a, b) => {
-      const rank = (name) => {
-        const n = name.toLowerCase();
-        if (n.includes('erasmus')) return 1;
-        if (n.includes('ekip')) return 2;
-        if (n.includes('founder')) return 3;
-        return 4;
-      };
-      return rank(a.name) - rank(b.name);
+      const aErasmus = a.name.toLowerCase().includes('erasmus');
+      const bErasmus = b.name.toLowerCase().includes('erasmus');
+      if (aErasmus && !bErasmus) return -1;
+      if (!aErasmus && bErasmus) return 1;
+      if (a.isEmpty !== b.isEmpty) return a.isEmpty ? 1 : -1;
+      return a.name.localeCompare(b.name, 'tr');
     });
 
     folders = normalized;

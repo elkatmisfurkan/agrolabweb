@@ -726,22 +726,71 @@ body {
 }
 
 /* Drive Folders Pill Switcher Bar below Showcase */
+.drive-folders-scroller {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+  position: relative;
+}
+
+.folders-scroll-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.folders-scroll-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-light);
+  background: rgba(16, 185, 129, 0.16);
+  transform: scale(1.06);
+}
+
 .drive-folders-bar {
   display: flex;
   align-items: center;
   gap: 0.45rem;
+  flex: 1;
+  min-width: 0;
   overflow-x: auto;
-  padding: 0.15rem 0.1rem 0.35rem;
-  scrollbar-width: none;
+  scroll-behavior: smooth;
+  padding: 0.15rem 0.15rem 0.45rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 185, 129, 0.45) rgba(255, 255, 255, 0.06);
 }
 
 .drive-folders-bar::-webkit-scrollbar {
-  display: none;
+  height: 5px;
+}
+
+.drive-folders-bar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-full);
+}
+
+.drive-folders-bar::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.48);
+  border-radius: var(--radius-full);
+}
+
+.drive-folders-bar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
 }
 
 .drive-folder-chip {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 0.4rem;
   padding: 0.36rem 0.78rem;
   border-radius: var(--radius-full);
@@ -1785,18 +1834,35 @@ body {
   display: flex;
   gap: 0.45rem;
   overflow-x: auto;
-  padding-bottom: 0.35rem;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--card-border);
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 185, 129, 0.45) rgba(255, 255, 255, 0.06);
 }
 
 .gallery-folder-tabs::-webkit-scrollbar {
-  display: none;
+  height: 5px;
+}
+
+.gallery-folder-tabs::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-full);
+}
+
+.gallery-folder-tabs::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.48);
+  border-radius: var(--radius-full);
+}
+
+.gallery-folder-tabs::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
 }
 
 .gallery-tab-btn {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 0.4rem;
   padding: 0.48rem 0.9rem;
   border-radius: var(--radius-md);
