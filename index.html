@@ -51,7 +51,7 @@
     <header class="top-nav">
       <div class="nav-brand">
         <span class="live-dot" title="Aktif Topluluk"></span>
-        <span class="brand-badge" data-i18n="nav_badge">AGRO-LAB LIVING LAB</span>
+        <span class="brand-badge" data-i18n="nav_badge">AGRO-LAB • HİKAYELER & ETKİNLİKLER</span>
       </div>
       <div class="nav-controls">
         <!-- Language Switcher -->
@@ -119,15 +119,71 @@
           <span class="badge-tag">🇪🇺 Erasmus+</span>
         </div>
 
-        <!-- Banner Visual Card -->
-        <div class="banner-preview" id="banner-preview-card">
-          <img src="assets/hero-banner.jpg" alt="Agro-Lab Akıllı Sera ve Yaşayan Laboratuvar" class="banner-img" />
-          <div class="banner-overlay">
-            <div class="banner-content">
-              <span class="banner-sub" data-i18n="banner_sub">YAŞAYAN LABORATUVAR (LIVING LAB)</span>
-              <h2 class="banner-heading" data-i18n="banner_heading">Gençlik ve Tarım Teknolojileri Buluşması</h2>
+        <!-- Stories & Events Rotating Showcase (Google Drive Powered) -->
+        <div class="stories-showcase-wrapper" id="stories-showcase-wrapper">
+          <div class="banner-preview showcase-card" id="banner-preview-card">
+            <!-- Story Progress Segments -->
+            <div class="showcase-progress-track" id="showcase-progress-track" aria-hidden="true"></div>
+
+            <!-- Top Header Bar inside Showcase -->
+            <div class="showcase-top-bar">
+              <div class="showcase-kicker-wrap">
+                <span class="showcase-live-dot"></span>
+                <span class="banner-sub" data-i18n="banner_sub">HİKAYELERİMİZ & ETKİNLİKLERİMİZ</span>
+              </div>
+              <button type="button" class="showcase-drive-pill" id="showcase-sync-btn" title="Google Drive ile Otomatik Senkronize — Galeriyi Aç">
+                <span class="drive-dot"></span>
+                <span id="showcase-counter-text">Drive Canlı</span>
+              </button>
             </div>
-            <button class="banner-info-btn" id="open-about-trigger" data-i18n="learn_more_btn">Tanı & Keşfet →</button>
+
+            <!-- Dual-Layer Image Stage for Smooth Crossfading -->
+            <div class="showcase-visual-stage" id="showcase-visual-stage">
+              <img src="https://drive.google.com/thumbnail?id=1-bj2lgNLDTDVgy6GWLrkV1FRHkjD2mY5&sz=w1000" alt="Agro-Lab Hikayelerimiz ve Etkinliklerimiz" class="banner-img active-layer" id="showcase-img-a" referrerpolicy="no-referrer" />
+              <img src="assets/hero-banner.jpg" alt="Agro-Lab Hikayelerimiz ve Etkinliklerimiz" class="banner-img" id="showcase-img-b" referrerpolicy="no-referrer" />
+
+              <!-- Empty Folder ("Yakında" / Coming Soon) Special Stage -->
+              <div class="showcase-coming-soon-stage" id="showcase-empty-stage" aria-hidden="true">
+                <div class="coming-soon-orb"></div>
+                <div class="coming-soon-content">
+                  <div class="coming-soon-icon-ring" id="coming-soon-icon">🚀</div>
+                  <span class="coming-soon-pill" id="coming-soon-pill" data-i18n="coming_soon_badge">✨ ÇOK YAKINDA</span>
+                  <h3 class="coming-soon-title" id="coming-soon-stage-title">Awesome Founders</h3>
+                  <p class="coming-soon-desc" id="coming-soon-stage-desc">
+                    Kırsaldan doğan yeni nesil tarım ve teknoloji girişimcilerinin ilham veren hikayeleri çok yakında burada!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Prev / Next Navigation Controls -->
+            <button type="button" class="showcase-nav-btn prev" id="showcase-prev-btn" aria-label="Önceki Etkinlik">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="showcase-nav-btn next" id="showcase-next-btn" aria-label="Sonraki Etkinlik">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <!-- Bottom Overlay Info & CTA -->
+            <div class="banner-overlay showcase-bottom-overlay">
+              <div class="banner-content">
+                <div class="showcase-folder-meta" id="showcase-folder-meta">
+                  <span class="folder-status-tag" id="showcase-status-tag">🇪🇺 Etkinlik Albümü</span>
+                  <span class="folder-photo-counter" id="showcase-photo-counter">📸 1 / 121</span>
+                </div>
+                <h2 class="banner-heading" id="showcase-heading">ErasmusDays</h2>
+              </div>
+              <button type="button" class="banner-info-btn" id="open-gallery-trigger" data-i18n="learn_more_btn">Albümü Aç →</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Google Drive Folder Switcher Bar -->
+          <div class="drive-folders-bar" id="drive-folders-bar" role="tablist" aria-label="Drive Etkinlik Klasörleri">
+            <!-- Populated dynamically from Google Drive folders -->
           </div>
         </div>
       </section>
@@ -461,6 +517,9 @@
             <p data-i18n="act4_desc">Genç çiftçilerin taleplerini yerel tarım müdürlükleri ve politika yapıcılarla buluşturan yuvarlak masa toplantıları.</p>
           </div>
         </div>
+        <button type="button" class="btn btn-primary btn-block" id="faaliyet-open-gallery-btn" style="margin-top: 0.35rem;">
+          📸 Hikayelerimiz & Etkinlik Galerisini Aç
+        </button>
       </div>
     </div>
   </div>
@@ -582,6 +641,91 @@
             </button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 7: HİKAYELERİMİZ & ETKİNLİKLERİMİZ (GOOGLE DRIVE GALLERY) -->
+  <div class="modal-backdrop" id="modal-gallery" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card modal-card-wide">
+      <button class="modal-close-btn" aria-label="Kapat">&times;</button>
+      <div class="modal-header gallery-modal-header">
+        <div class="gallery-header-top">
+          <span class="gallery-cloud-badge" id="gallery-sync-status">☁️ Google Drive Otomatik Arşiv</span>
+          <div class="gallery-header-actions">
+            <button type="button" class="gallery-mini-btn" id="refresh-drive-btn" title="Drive'dan Şimdi Yenile">
+              🔄 Yenile
+            </button>
+            <a href="https://drive.google.com/drive/folders/1CyZTMs4nbbypNXl5YrnjsvtNZNe-_1UU" target="_blank" rel="noopener noreferrer" class="gallery-mini-btn" title="Google Drive Klasörünü Aç">
+              📂 Drive
+            </a>
+          </div>
+        </div>
+        <h3 class="modal-title" data-i18n="gallery_modal_title">Hikayelerimiz & Etkinliklerimiz</h3>
+        <p class="modal-sub" data-i18n="gallery_modal_sub">Saha çalışmalarımız, ErasmusDays anlarımız ve yakında eklenecek yeni hikayelerimiz</p>
+      </div>
+
+      <div class="modal-body gallery-modal-body">
+        <!-- Folder Switcher Tabs inside Modal -->
+        <div class="gallery-folder-tabs" id="gallery-folder-tabs" role="tablist">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Media Sub-Filter Bar (All / Photos / Videos) -->
+        <div class="gallery-subbar" id="gallery-subbar">
+          <div class="media-type-pills" id="gallery-media-filters">
+            <button type="button" class="media-filter-pill active" data-filter="all">Tümü</button>
+            <button type="button" class="media-filter-pill" data-filter="image">📸 Fotoğraflar</button>
+            <button type="button" class="media-filter-pill" data-filter="video">🎬 Videolar</button>
+          </div>
+          <span class="gallery-count-label" id="gallery-count-label">165 içerik</span>
+        </div>
+
+        <!-- Dynamic Gallery Grid or Empty Folder ("Yakında") View -->
+        <div class="gallery-stage-container" id="gallery-stage-container">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Load More Button -->
+        <button type="button" class="btn btn-secondary btn-block" id="gallery-load-more-btn" style="display: none;">
+          ➕ Daha Fazla Görsel Göster
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 8: FULLSCREEN MEDIA LIGHTBOX -->
+  <div class="modal-backdrop lightbox-backdrop" id="modal-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-wrapper">
+      <div class="lightbox-top-bar">
+        <div class="lightbox-info">
+          <span class="lightbox-folder-tag" id="lightbox-folder-name">ErasmusDays</span>
+          <span class="lightbox-counter" id="lightbox-counter">1 / 121</span>
+        </div>
+        <div class="lightbox-actions">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="lightbox-action-btn" id="lightbox-drive-link" title="Google Drive'da Aç">
+            ↗ Drive'da Gör
+          </a>
+          <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Kapat">&times;</button>
+        </div>
+      </div>
+
+      <div class="lightbox-stage" id="lightbox-stage">
+        <button type="button" class="lightbox-nav-btn prev" id="lightbox-prev-btn" aria-label="Önceki">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="lightbox-media-box" id="lightbox-media-box">
+          <!-- Image or Video iframe injected here -->
+        </div>
+
+        <button type="button" class="lightbox-nav-btn next" id="lightbox-next-btn" aria-label="Sonraki">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
